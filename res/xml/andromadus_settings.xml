@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">i
+    <PreferenceCategory android:key="pref_category_button_settings"
+        android:title="@string/andromadus_settings_title"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+        <CheckBoxPreference android:key="pref_trackball_wake_toggle"
+            android:title="@string/pref_trackball_wake_toggle_title"
+            android:summary="@string/pref_trackball_wake_toggle_summary">
+        </CheckBoxPreference>
+
+        <CheckBoxPreference 
+            android:key="pref_statusbar_sixbar_signal" 
+	    android:title="@string/pref_statusbar_sixbar_signal_title"
+            android:summary="@string/pref_statusbar_sixbar_signal_summary">
+        </CheckBoxPreference>
+
+        <CheckBoxPreference android:key="pref_volume_lock_screen"
+            android:title="@string/pref_volume_lock_toggle_title"
+            android:summary="@string/pref_volume_lock_toggle_summary">
+        </CheckBoxPreference>
+
+    </PreferenceCategory>
+</PreferenceScreen>
