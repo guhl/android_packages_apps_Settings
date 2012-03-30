@@ -70,6 +70,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_CATEGORY_CALLS = "category_calls";
     private static final String KEY_QUIET_HOURS = "quiet_hours";
     private static final String KEY_VOLBTN_MUSIC_CTRL = "volbtn_music_controls";
+    private static final String KEY_SEPARATE_HEADSET_VOLUME = "separate_headset_volume";
 
     private static final String SILENT_MODE_OFF = "off";
     private static final String SILENT_MODE_VIBRATE = "vibrate";
@@ -94,6 +95,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private Preference mRingtonePreference;
     private Preference mNotificationPreference;
     private PreferenceScreen mQuietHours;
+    private CheckBoxPreference mSeparateHeadsetVolume;
 
     private Runnable mRingtoneLookupRunnable;
 
@@ -137,6 +139,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             // device is not CDMA, do not display CDMA emergency_tone
             getPreferenceScreen().removePreference(findPreference(KEY_EMERGENCY_TONE));
         }
+
+        mSeparateHeadsetVolume = (CheckBoxPreference) findPreference(KEY_SEPARATE_HEADSET_VOLUME);
+        mSeparateHeadsetVolume.setChecked(Settings.System.getInt(resolver,
+                Settings.System.SEPARATE_HEADSET_VOLUME, 0) != 0);
 
         mSilentMode = (ListPreference) findPreference(KEY_SILENT_MODE);
         if (!getResources().getBoolean(R.bool.has_silent_mode)) {
@@ -370,6 +376,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         } else if (preference == mVolBtnMusicCtrl) {
             Settings.System.putInt(getContentResolver(), Settings.System.VOLBTN_MUSIC_CONTROLS,
                     mVolBtnMusicCtrl.isChecked() ? 1 : 0);
+
+        } else if (preference == mSeparateHeadsetVolume) {
+            Settings.System.putInt(getContentResolver(), Settings.System.SEPARATE_HEADSET_VOLUME,
+                    mSeparateHeadsetVolume.isChecked() ? 1 : 0);
 
         } else {
             // If we didn't handle it, let preferences handle it.

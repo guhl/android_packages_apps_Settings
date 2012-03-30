@@ -636,6 +636,8 @@
     <string name="link_volume_ringtones">Link volumes</string>
     <string name="link_volume_ringtones_toast">Make sure to change your volume to re-set your notification volume to match your ringtone volume.</string>
     <string name="link_volume_mutes">Link mute states</string>
+    <string name="separate_volume_headset_title">Separate headset volume</string>
+    <string name="separate_volume_headset_summary">Keep a separate set of volume settings for the speaker and wired headset</string>
 
     <!-- Quiet hours #CM -->
     <string name="quiet_hours_title">Quiet hours</string>
