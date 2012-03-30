@@ -4256,6 +4256,8 @@ found in the list of installed apps.</string>
     <string name="pref_statusbar_sixbar_signal_summary">Choose whether or or not to use sixbar icons (modded) for cell signal strength</string>
     <string name="pref_trackball_wake_toggle_title">Trackball wake</string>
     <string name="pref_trackball_wake_toggle_summary">Allow trackball to wake the device</string>
+    <string name="pref_trackball_unlock_toggle_title">Trackball unlock</string>
+    <string name="pref_trackball_unlock_toggle_summary">Allow trackball to unlock the device</string>
     <string name="pref_volume_lock_toggle_title">Volume Lockscreen</string>
     <string name="pref_volume_lock_toggle_summary">Replace Camera/Unlock lockscreen with Sound/Unlock</string>
 

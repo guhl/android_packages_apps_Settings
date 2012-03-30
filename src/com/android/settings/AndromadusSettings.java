@@ -14,6 +14,7 @@ import com.android.settings.SettingsFragment;
 public class AndromadusSettings extends SettingsFragment {
 
     private static final String TRACKBALL_WAKE_TOGGLE = "pref_trackball_wake_toggle";
+    private static final String TRACKBALL_UNLOCK_TOGGLE = "pref_trackball_unlock_toggle";
     private static final String BUTTON_CATEGORY = "pref_category_button_settings";
     private static final String STATUSBAR_SIXBAR_SIGNAL = "pref_statusbar_sixbar_signal";
     private static final String VOLUME_LOCK_SCREEN = "pref_volume_lock_screen";
@@ -22,6 +23,7 @@ public class AndromadusSettings extends SettingsFragment {
     private PreferenceScreen mPrefSet;
 
     private CheckBoxPreference mTrackballWake;
+    private CheckBoxPreference mTrackballUnlockScreen;
     private CheckBoxPreference mUseSixbaricons;
     private CheckBoxPreference mUseVolumeLock;
 
@@ -43,6 +45,12 @@ public class AndromadusSettings extends SettingsFragment {
         mTrackballWake.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.TRACKBALL_WAKE_SCREEN, 1) == 1);
 
+        /* Trackball unlock pref */
+        mTrackballUnlockScreen = (CheckBoxPreference) mPrefSet.findPreference(
+                TRACKBALL_UNLOCK_TOGGLE);
+        mTrackballUnlockScreen.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.TRACKBALL_UNLOCK_SCREEN, 1) == 1);
+
         /* Volume Lock pref */
         mUseVolumeLock = (CheckBoxPreference) mPrefSet.findPreference(
                 VOLUME_LOCK_SCREEN);
@@ -58,6 +66,7 @@ public class AndromadusSettings extends SettingsFragment {
         /* Remove mTrackballWake on devices without trackballs */ 
         if (!getResources().getBoolean(R.bool.has_trackball)) {
             buttonCategory.removePreference(mTrackballWake);
+            buttonCategory.removePreference(mTrackballUnlockScreen);
         }
     }
 
@@ -66,6 +75,11 @@ public class AndromadusSettings extends SettingsFragment {
         if (preference == mTrackballWake) {
             value = mTrackballWake.isChecked();
             Settings.System.putInt(mCr, Settings.System.TRACKBALL_WAKE_SCREEN,
+                    value ? 1 : 0);
+            return true;
+        } else if (preference == mTrackballUnlockScreen) {
+            value = mTrackballUnlockScreen.isChecked();
+            Settings.System.putInt(mCr, Settings.System.TRACKBALL_UNLOCK_SCREEN,
                     value ? 1 : 0);
             return true;
         } else if (preference == mUseSixbaricons) {

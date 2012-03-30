@@ -9,6 +9,11 @@
             android:summary="@string/pref_trackball_wake_toggle_summary">
         </CheckBoxPreference>
 
+        <CheckBoxPreference android:key="pref_trackball_unlock_toggle"
+            android:title="@string/pref_trackball_unlock_toggle_title"
+            android:summary="@string/pref_trackball_unlock_toggle_summary">
+        </CheckBoxPreference>
+
         <CheckBoxPreference 
             android:key="pref_statusbar_sixbar_signal" 
 	    android:title="@string/pref_statusbar_sixbar_signal_title"
