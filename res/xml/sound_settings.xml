@@ -26,12 +26,6 @@
             android:persistent="false"
             android:streamType="ring" />
 
-    <CheckBoxPreference
-            android:key="separate_headset_volume"
-            android:title="@string/separate_volume_headset_title"
-            android:summary="@string/separate_volume_headset_summary"
-            android:defaultValue="false" />
-
     <ListPreference
             android:key="silent_mode"
             android:title="@string/silent_mode_title"
