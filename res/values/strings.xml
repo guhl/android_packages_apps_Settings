@@ -4264,6 +4264,9 @@ found in the list of installed apps.</string>
     <string name="pref_trackball_unlock_toggle_summary">Allow trackball to unlock the device</string>
     <string name="pref_volume_lock_toggle_title">Volume Lockscreen</string>
     <string name="pref_volume_lock_toggle_summary">Replace Camera/Unlock lockscreen with Sound/Unlock</string>
-
+    <!-- Kill App Longpress Back timeout duration -->
+    <string name="pref_kill_app_longpress_back_timeout_title">Kill app longpress back timeout</string>
+    <string name="pref_kill_app_longpress_back_timeout_dialogtitle">Duration in ms (500-2000)</string>
+    <string name="pref_kill_app_longpress_back_timeout_summary">Hold down back button for 1000ms to kill a process</string>
 </resources>
 

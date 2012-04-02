@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">i
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:key="pref_category_button_settings"
         android:title="@string/andromadus_settings_title"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
@@ -24,6 +24,16 @@
             android:title="@string/pref_volume_lock_toggle_title"
             android:summary="@string/pref_volume_lock_toggle_summary">
         </CheckBoxPreference>
+
+	<EditTextPreference
+	    android:title="@string/pref_kill_app_longpress_back_timeout_title"
+	    android:dialogTitle="@string/pref_kill_app_longpress_back_timeout_dialogtitle"
+	    android:summary="@string/pref_kill_app_longpress_back_timeout_summary"
+	    android:key="pref_kill_app_longpress_back_timeout"
+	    android:singleLine="true"
+	    android:inputType="number"
+	    android:defaultValue="1000">
+	</EditTextPreference>
 
     </PreferenceCategory>
 </PreferenceScreen>
