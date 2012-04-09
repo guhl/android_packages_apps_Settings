@@ -24,6 +24,7 @@ public class AndromadusSettings extends SettingsFragment
     private static final String BUTTON_CATEGORY = "pref_category_button_settings";
     private static final String STATUSBAR_SIXBAR_SIGNAL = "pref_statusbar_sixbar_signal";
     private static final String VOLUME_LOCK_SCREEN = "pref_volume_lock_screen";
+    private static final String STATUSBAR_IME_TOGGLE = "pref_show_statusbar_ime_switcher";
     private static final String KILL_APP_LONGPRESS_BACK_TIMEOUT = "pref_kill_app_longpress_back_timeout";
 
     private ContentResolver mCr;
@@ -33,6 +34,7 @@ public class AndromadusSettings extends SettingsFragment
     private CheckBoxPreference mTrackballUnlockScreen;
     private CheckBoxPreference mUseSixbaricons;
     private CheckBoxPreference mUseVolumeLock;
+    private CheckBoxPreference mShowImeSwitcher;
 
     private EditTextPreference mKillAppLongpressBackTimeout;
 
@@ -71,6 +73,12 @@ public class AndromadusSettings extends SettingsFragment
                 STATUSBAR_SIXBAR_SIGNAL);
         mUseSixbaricons.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUSBAR_6BAR_SIGNAL, 1) == 1);
+
+        /* Statusbar IME Switcher pref */
+        mShowImeSwitcher = (CheckBoxPreference) mPrefSet.findPreference(
+                STATUSBAR_IME_TOGGLE);
+        mShowImeSwitcher.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.SHOW_STATUSBAR_IME_SWITCHER, 1) == 1);
 
         /* Kill App Longpress Back timeout duration pref */
         mKillAppLongpressBackTimeout = (EditTextPreference) mPrefSet.findPreference(KILL_APP_LONGPRESS_BACK_TIMEOUT);
@@ -142,6 +150,11 @@ public class AndromadusSettings extends SettingsFragment
         } else if (preference == mUseVolumeLock) {
             value = mUseVolumeLock.isChecked();
             Settings.System.putInt(mCr, Settings.System.VOLUME_LOCK_SCREEN,
+                    value ? 1 : 0);
+            return true;
+        } else if (preference == mShowImeSwitcher) {
+            value = mShowImeSwitcher.isChecked();
+            Settings.System.putInt(mCr, Settings.System.SHOW_STATUSBAR_IME_SWITCHER,
                     value ? 1 : 0);
             return true;
         }

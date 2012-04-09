@@ -4269,5 +4269,9 @@ found in the list of installed apps.</string>
     <string name="pref_kill_app_longpress_back_timeout_title">Kill app longpress back timeout</string>
     <string name="pref_kill_app_longpress_back_timeout_dialogtitle">Duration in ms (500-2000)</string>
     <string name="pref_kill_app_longpress_back_timeout_summary">Hold down back button for 1000ms to kill a process</string>
+    <!-- Show Statusbar IME Switcher -->
+    <string name="pref_show_statusbar_ime_switcher_title">Show IME Switcher</string>
+    <string name="pref_show_statusbar_ime_switcher_summary">In statusbar, while typing (requires reboot)</string>
+
 </resources>
 

@@ -25,6 +25,11 @@
             android:summary="@string/pref_volume_lock_toggle_summary">
         </CheckBoxPreference>
 
+        <CheckBoxPreference android:key="pref_show_statusbar_ime_switcher"
+            android:title="@string/pref_show_statusbar_ime_switcher_title"
+            android:summary="@string/pref_show_statusbar_ime_switcher_summary">
+        </CheckBoxPreference>
+
 	<EditTextPreference
 	    android:title="@string/pref_kill_app_longpress_back_timeout_title"
 	    android:dialogTitle="@string/pref_kill_app_longpress_back_timeout_dialogtitle"
