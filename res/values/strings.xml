@@ -1044,7 +1044,7 @@
     <string name="unlock_menu_unlock_title">Menu unlock</string>
     <string name="unlock_menu_unlock_summary">Pressing the menu button unlocks the device</string>
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
-    <string name="unlock_quick_unlock_control_summary">No need to press OK when entering PIN or password. Delete counts as bad try</string>
+    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
 
     <!-- Delays and timeouts -->
     <string name="delay_and_timeout_title">Lock delay</string>
@@ -4307,6 +4307,13 @@ found in the list of installed apps.</string>
     <string name="pref_volume_wake_title">Volume rocker wake</string>
     <string name="pref_volume_wake_summary">Pressing the volume rocker up/down will wake the device</string>
 
+    <string name="profile_write_nfc_tag">Write to NFC tag</string>
+    <string name="profile_write_touch_tag">Touch tag to write</string>
+    <string name="profile_write_success">Tag successfully written</string>
+    <string name="profile_write_failed">Tag writing failed!</string>
+    <string name="profile_selected">Profile selected: %1$s</string>
+    <string name="profile_nfc_text">Writing a profile to an NFC tag allows you to tap the tag to select that profile. Tapping a second time will select the previously selected profile.</string>
+
     <!-- Andromadus -->
     <string name="andromadus_settings_title">Andromadus</string>
     <string name="pref_statusbar_sixbar_signal_title">Use sixbar signal icons</string>
@@ -4326,4 +4333,3 @@ found in the list of installed apps.</string>
     <string name="pref_show_statusbar_ime_switcher_summary">In statusbar, while typing (requires reboot)</string>
 
 </resources>
-
