@@ -618,6 +618,9 @@
     <!-- Setting for volume rocker music controls -->
     <string name="volbtn_music_controls_title">Volume rocker music controls</string>
     <string name="volbtn_music_controls_summary">When screen off, long-pressing the volume rockers will seek music tracks</string>
+    <!-- Setting for volume rocker music controls -->
+    <string name="cambtn_music_controls_title">Camera button music controls</string>
+    <string name="cambtn_music_controls_summary">When screen off, long-pressing the camera button will play/pause the active music track</string>
     <!-- Sound settings screen, setting option name checkbox to enable/disable audio recording features that improve audio recording in noisy environments -->
     <string name="audio_record_proc_title">Noise cancellation</string>
     <!-- Volume description for media volume -->

@@ -106,6 +106,12 @@
             android:summary="@string/volbtn_music_controls_summary"
             android:persistent="false" />
 
+    <CheckBoxPreference
+            android:key="cambtn_music_controls"
+            android:title="@string/cambtn_music_controls_title"
+            android:summary="@string/cambtn_music_controls_summary"
+            android:persistent="false" />
+
     <ListPreference
             android:key="emergency_tone"
             android:title="@string/emergency_tone_title"
