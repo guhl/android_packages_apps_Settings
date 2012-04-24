@@ -1959,4 +1959,8 @@
     <string name="pref_kill_app_longpress_back_timeout_title">长按返回键杀死进程延时设置</string>
     <string name="pref_kill_app_longpress_back_timeout_dialogtitle">毫秒延时 (500-2000)</string>
     <string name="pref_kill_app_longpress_back_timeout_summary">长按 1000 毫秒杀死进程</string>
+    <!-- Show Statusbar IME Switcher -->
+    <string name="pref_show_statusbar_ime_switcher_title">状态栏输入法切换</string>
+    <string name="pref_show_statusbar_ime_switcher_summary">在输入文字时是否显示（需要重启）</string>
+
 </resources>
