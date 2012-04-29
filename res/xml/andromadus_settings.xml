@@ -20,11 +20,6 @@
             android:summary="@string/pref_statusbar_sixbar_signal_summary">
         </CheckBoxPreference>
 
-        <CheckBoxPreference android:key="pref_volume_lock_screen"
-            android:title="@string/pref_volume_lock_toggle_title"
-            android:summary="@string/pref_volume_lock_toggle_summary">
-        </CheckBoxPreference>
-
         <CheckBoxPreference android:key="pref_show_statusbar_ime_switcher"
             android:title="@string/pref_show_statusbar_ime_switcher_title"
             android:summary="@string/pref_show_statusbar_ime_switcher_summary">
