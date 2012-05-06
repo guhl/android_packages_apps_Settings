@@ -582,7 +582,7 @@
     <string name="bluetooth_dock_settings_a2dp">For music and media</string>
     <!-- Bluetooth settings. Dock Setting Dialog - Remember setting and don't ask user again -->
     <string name="bluetooth_dock_settings_remember">Remember settings</string>
-
+    
     <!-- NFC settings -->
     <!-- Used in the 1st-level settings screen to turn on NFC -->
     <string name="nfc_quick_toggle_title">NFC</string>
@@ -848,7 +848,7 @@
     <!-- System Interface settings #CM -->
     <string name="system_settings_title">System</string>
     <string name="system_interface_title">System interface</string>
-
+    
     <!-- Notification Drawer #CM -->
     <string name="notification_drawer_title">Notification drawer</string>
 
@@ -934,6 +934,7 @@
     <string name="status_bar_signal_text_show_text">Text</string>
     <string name="status_bar_signal_text_hidden">Hidden</string>
 
+    <!-- Lock screen #CM -->
     <string name="lock_screen_title">Lock screen</string>
 
     <!-- Lock Screen Shortcuts -->
@@ -1413,7 +1414,7 @@
     <string name="backup_section_title">Backup &amp; restore</string>
     <!-- Personal data section title -->
     <string name="personal_data_section_title">Personal data</string>
-
+    
     <!-- Master Clear (Factory Data Reset) -->
     <!-- SD card & phone storage settings screen, setting option name under Internal phone storage heading -->
     <string name="master_clear_title">Factory data reset</string>
@@ -1577,7 +1578,7 @@
     <string name="date_picker_title">Date</string>
     <!-- Title string shown above TimePicker, letting a user select system time [CHAR LIMIT=20] -->
     <string name="time_picker_title">Time</string>
-
+    
     <!-- Performance settings #CM -->
     <string name="performance_settings_title">Performance</string>
 
@@ -1748,7 +1749,7 @@
     <string name="build_date_default">2012-01-01-0000</string>
     <!-- About device screen, show when a value of some status item is unavailable. -->
     <string name="device_info_not_available">Not available</string>
-
+    
     <!-- Phone info -->
     <!-- Phone Info screen. Button label to turn on the radio. Only shown in diagnostic screen, so precise translation is not needed. -->
     <string name="turn_on_radio">Turn on radio</string>
@@ -2206,9 +2207,9 @@
     <!-- Temporary - stubed preference - to be removed once all preferences have been merged -->
     <string name="stubbed">Preference Stub</string>
     <string name="stubbed_summary">Temporary placeholder until functionality merged</string>
-
+    
     <!-- **** TEMPORARY LOCATION FOR CMPARTS MERGE - END **** -->
-
+    
     <!-- Instructions after the user changes the mass storage settings -->
     <string name="sdcard_changes_instructions">Changes take effect when USB cable is reconnected</string>
     <!-- Enable USB mass storage mode checkbox title -->
@@ -4374,6 +4375,22 @@ found in the list of installed apps.</string>
     <string name="profile_write_failed">Tag writing failed!</string>
     <string name="profile_selected">Profile selected: %1$s</string>
     <string name="profile_nfc_text">Writing a profile to an NFC tag allows you to tap the tag to select that profile. Tapping a second time will select the previously selected profile.</string>
+
+    <!-- Display Settings : Render effect -->
+    <string name="pref_render_effect_title">Render effect</string>
+    <string name="pref_render_effect_summary">Change what colors are used to draw the screen</string>
+
+    <string name="pref_render_effect_none">No render effect</string>
+    <string name="pref_render_effect_night">Night mode (3700K)</string>
+    <string name="pref_render_effect_green">Terminal (green)</string>
+    <string name="pref_render_effect_blue">Blue</string>
+    <string name="pref_render_effect_amber">Amber</string>
+    <string name="pref_render_effect_salmon">Salmon</string>
+    <string name="pref_render_effect_fuscia">Fuscia</string>
+    <string name="pref_render_effect_calibrated">Calibrated (N1)</string>
+    <string name="pref_render_effect_calibrated_red">Calibrated (N1) Low Red</string>
+    <string name="pref_render_effect_calibrated_cool">Calibrated (N1) Cool</string>
+    <string name="pref_render_effect_red">Red</string>
 
     <!-- Andromadus -->
     <string name="andromadus_settings_title">Andromadus</string>
