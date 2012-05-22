@@ -70,7 +70,7 @@ public class AndromadusSettings extends SettingsFragment
         mShowImeSwitcher = (CheckBoxPreference) mPrefSet.findPreference(
                 STATUSBAR_IME_TOGGLE);
         mShowImeSwitcher.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.SHOW_STATUSBAR_IME_SWITCHER, 1) == 1);
+                Settings.System.SHOW_STATUSBAR_IME_SWITCHER, 0) == 1);
 
         /* Kill App Longpress Back timeout duration pref */
         mKillAppLongpressBackTimeout = (EditTextPreference) mPrefSet.findPreference(KILL_APP_LONGPRESS_BACK_TIMEOUT);
