@@ -4435,5 +4435,8 @@ found in the list of installed apps.</string>
     <!-- Show Statusbar IME Switcher -->
     <string name="pref_show_statusbar_ime_switcher_title">Show IME Switcher</string>
     <string name="pref_show_statusbar_ime_switcher_summary">In statusbar, while typing (requires reboot)</string>
+    <!-- Show Brightness Toggleslider -->
+    <string name="pref_show_brightness_toggleslider_title">Show Brightness Toggleslider</string>
+    <string name="pref_show_brightness_toggleslider_summary">In the notification area</string>
 
 </resources>

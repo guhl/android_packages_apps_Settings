@@ -25,6 +25,7 @@ public class AndromadusSettings extends SettingsFragment
     private static final String STATUSBAR_SIXBAR_SIGNAL = "pref_statusbar_sixbar_signal";
     private static final String STATUSBAR_IME_TOGGLE = "pref_show_statusbar_ime_switcher";
     private static final String KILL_APP_LONGPRESS_BACK_TIMEOUT = "pref_kill_app_longpress_back_timeout";
+    private static final String SHOW_BRIGHTNESS_TOGGLESLIDER = "pref_show_brightness_toggleslider";
 
     private ContentResolver mCr;
     private PreferenceScreen mPrefSet;
@@ -33,6 +34,7 @@ public class AndromadusSettings extends SettingsFragment
     private CheckBoxPreference mTrackballUnlockScreen;
     private CheckBoxPreference mUseSixbaricons;
     private CheckBoxPreference mShowImeSwitcher;
+    private CheckBoxPreference mShowBrightnessToggleslider;
 
     private EditTextPreference mKillAppLongpressBackTimeout;
 
@@ -76,6 +78,11 @@ public class AndromadusSettings extends SettingsFragment
         mKillAppLongpressBackTimeout = (EditTextPreference) mPrefSet.findPreference(KILL_APP_LONGPRESS_BACK_TIMEOUT);
         mKillAppLongpressBackTimeout.setOnPreferenceChangeListener(this);
 
+        /* Notification Area Brightness Toggleslider pref */
+        mShowBrightnessToggleslider = (CheckBoxPreference) mPrefSet.findPreference(
+                SHOW_BRIGHTNESS_TOGGLESLIDER);
+        mShowBrightnessToggleslider.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.SHOW_BRIGHTNESS_TOGGLESLIDER, 0) == 1);
 
         /* Remove mTrackballWake on devices without trackballs */ 
         if (!getResources().getBoolean(R.bool.has_trackball)) {
@@ -142,6 +149,11 @@ public class AndromadusSettings extends SettingsFragment
         } else if (preference == mShowImeSwitcher) {
             value = mShowImeSwitcher.isChecked();
             Settings.System.putInt(mCr, Settings.System.SHOW_STATUSBAR_IME_SWITCHER,
+                    value ? 1 : 0);
+            return true;
+        } else if (preference == mShowBrightnessToggleslider) {
+            value = mShowBrightnessToggleslider.isChecked();
+            Settings.System.putInt(mCr, Settings.System.SHOW_BRIGHTNESS_TOGGLESLIDER,
                     value ? 1 : 0);
             return true;
         }

@@ -35,5 +35,10 @@
 	    android:defaultValue="1000">
 	</EditTextPreference>
 
+        <CheckBoxPreference android:key="pref_show_brightness_toggleslider"
+            android:title="@string/pref_show_brightness_toggleslider_title"
+            android:summary="@string/pref_show_brightness_toggleslider_summary"
+	    android:defaultValue="false">
+        </CheckBoxPreference>
     </PreferenceCategory>
 </PreferenceScreen>
