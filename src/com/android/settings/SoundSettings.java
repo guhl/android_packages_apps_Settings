@@ -189,7 +189,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
         mVolBtnMusicCtrl = (CheckBoxPreference) findPreference(KEY_VOLBTN_MUSIC_CTRL);
         mVolBtnMusicCtrl.setChecked(Settings.System.getInt(resolver,
-                Settings.System.VOLBTN_MUSIC_CONTROLS, 0) != 0);
+                Settings.System.VOLBTN_MUSIC_CONTROLS, 1) != 0);
 
         mCamBtnMusicCtrl = (CheckBoxPreference) findPreference(KEY_CAMBTN_MUSIC_CTRL);
         mCamBtnMusicCtrl.setChecked(Settings.System.getInt(resolver,
