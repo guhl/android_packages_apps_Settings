@@ -47,7 +47,7 @@ public class AndromadusSettings extends SettingsFragment
         mPrefSet = getPreferenceScreen();
         mCr = getContentResolver();
 
-        PreferenceCategory buttonCategory = (PreferenceCategory) mPrefSet
+        PreferenceScreen buttonCategory = (PreferenceScreen) mPrefSet
                 .findPreference(BUTTON_CATEGORY);
 
         /* Trackball wake pref */

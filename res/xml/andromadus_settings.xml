@@ -1,29 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:key="pref_category_button_settings"
-        android:title="@string/andromadus_settings_title"
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="@string/andromadus_settings"
+        android:key="pref_category_button_settings"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-        <CheckBoxPreference android:key="pref_trackball_wake_toggle"
-            android:title="@string/pref_trackball_wake_toggle_title"
-            android:summary="@string/pref_trackball_wake_toggle_summary">
-        </CheckBoxPreference>
-
-        <CheckBoxPreference android:key="pref_trackball_unlock_toggle"
-            android:title="@string/pref_trackball_unlock_toggle_title"
-            android:summary="@string/pref_trackball_unlock_toggle_summary">
-        </CheckBoxPreference>
-
-        <CheckBoxPreference 
-            android:key="pref_statusbar_sixbar_signal" 
-	    android:title="@string/pref_statusbar_sixbar_signal_title"
-            android:summary="@string/pref_statusbar_sixbar_signal_summary">
-        </CheckBoxPreference>
-
-        <CheckBoxPreference android:key="pref_show_statusbar_ime_switcher"
-            android:title="@string/pref_show_statusbar_ime_switcher_title"
-            android:summary="@string/pref_show_statusbar_ime_switcher_summary">
-        </CheckBoxPreference>
+    <PreferenceCategory
+        android:title="@string/andromadus_general" />
 
 	<EditTextPreference
 	    android:title="@string/pref_kill_app_longpress_back_timeout_title"
@@ -32,13 +14,34 @@
 	    android:key="pref_kill_app_longpress_back_timeout"
 	    android:singleLine="true"
 	    android:inputType="number"
-	    android:defaultValue="1000">
-	</EditTextPreference>
+	    android:defaultValue="1000" />
+
+        <CheckBoxPreference android:key="pref_trackball_unlock_toggle"
+            android:title="@string/pref_trackball_unlock_toggle_title"
+            android:summary="@string/pref_trackball_unlock_toggle_summary" />
+
+        <CheckBoxPreference android:key="pref_trackball_wake_toggle"
+            android:title="@string/pref_trackball_wake_toggle_title"
+            android:summary="@string/pref_trackball_wake_toggle_summary" />
+
+    <PreferenceCategory
+        android:title="@string/andromadus_statusbar" />
+
+        <CheckBoxPreference android:key="pref_show_statusbar_ime_switcher"
+            android:title="@string/pref_show_statusbar_ime_switcher_title"
+            android:summary="@string/pref_show_statusbar_ime_switcher_summary" />
+
+        <CheckBoxPreference
+            android:key="pref_statusbar_sixbar_signal"
+            android:title="@string/pref_statusbar_sixbar_signal_title"
+            android:summary="@string/pref_statusbar_sixbar_signal_summary" />
+
+    <PreferenceCategory
+        android:title="@string/andromadus_notification_drawer" />
 
         <CheckBoxPreference android:key="pref_show_brightness_toggleslider"
             android:title="@string/pref_show_brightness_toggleslider_title"
             android:summary="@string/pref_show_brightness_toggleslider_summary"
-	    android:defaultValue="false">
-        </CheckBoxPreference>
-    </PreferenceCategory>
+	        android:defaultValue="false" />
+
 </PreferenceScreen>

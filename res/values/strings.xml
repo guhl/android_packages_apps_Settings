@@ -4458,7 +4458,10 @@ found in the list of installed apps.</string>
     <string name="pref_render_effect_red">Red</string>
 
     <!-- Andromadus -->
-    <string name="andromadus_settings_title">Andromadus</string>
+    <string name="andromadus_settings">Andromadus</string>
+    <string name="andromadus_general">General</string>
+    <string name="andromadus_statusbar">Status Bar</string>
+    <string name="andromadus_notification_drawer">Notification Drawer</string>
     <string name="pref_statusbar_sixbar_signal_title">Use sixbar signal icons</string>
     <string name="pref_statusbar_sixbar_signal_summary">Choose whether or or not to use sixbar icons (modded) for cell signal strength</string>
     <string name="pref_trackball_wake_toggle_title">Trackball wake</string>
