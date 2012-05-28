@@ -4478,6 +4478,10 @@ found in the list of installed apps.</string>
     <!-- Hostname setting -->
     <string name="device_hostname">Device hostname</string>
 
+    <!-- Status bar notification count -->
+    <string name="status_bar_notif_count_title">Show notification count</string>
+    <string name="status_bar_notif_count_summary">Display number of pending notifications on the status bar</string>
+
     <!-- Display Settings : Render effect -->
     <string name="pref_render_effect_title">Render effect</string>
     <string name="pref_render_effect_summary">Change what colors are used to draw the screen</string>
