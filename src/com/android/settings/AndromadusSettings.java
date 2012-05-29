@@ -24,6 +24,7 @@ public class AndromadusSettings extends SettingsFragment
     private static final String BUTTON_CATEGORY = "pref_category_button_settings";
     private static final String STATUSBAR_SIXBAR_SIGNAL = "pref_statusbar_sixbar_signal";
     private static final String STATUSBAR_IME_TOGGLE = "pref_show_statusbar_ime_switcher";
+    private static final String KEY_CAMBTN_MUSIC_CTRL = "cambtn_music_controls";
     private static final String KILL_APP_LONGPRESS_BACK_TIMEOUT = "pref_kill_app_longpress_back_timeout";
     private static final String SHOW_BRIGHTNESS_TOGGLESLIDER = "pref_show_brightness_toggleslider";
 
@@ -34,6 +35,7 @@ public class AndromadusSettings extends SettingsFragment
     private CheckBoxPreference mTrackballUnlockScreen;
     private CheckBoxPreference mUseSixbaricons;
     private CheckBoxPreference mShowImeSwitcher;
+    private CheckBoxPreference mCamBtnMusicCtrl;
     private CheckBoxPreference mShowBrightnessToggleslider;
 
     private EditTextPreference mKillAppLongpressBackTimeout;
@@ -73,6 +75,12 @@ public class AndromadusSettings extends SettingsFragment
                 STATUSBAR_IME_TOGGLE);
         mShowImeSwitcher.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.SHOW_STATUSBAR_IME_SWITCHER, 0) == 1);
+
+        /* Camera button play/pause pref */
+        mCamBtnMusicCtrl = (CheckBoxPreference) mPrefSet.findPreference(
+                KEY_CAMBTN_MUSIC_CTRL);
+        mCamBtnMusicCtrl.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.CAMBTN_MUSIC_CONTROLS, 0) == 1);
 
         /* Kill App Longpress Back timeout duration pref */
         mKillAppLongpressBackTimeout = (EditTextPreference) mPrefSet.findPreference(KILL_APP_LONGPRESS_BACK_TIMEOUT);
@@ -149,6 +157,12 @@ public class AndromadusSettings extends SettingsFragment
         } else if (preference == mShowImeSwitcher) {
             value = mShowImeSwitcher.isChecked();
             Settings.System.putInt(mCr, Settings.System.SHOW_STATUSBAR_IME_SWITCHER,
+                    value ? 1 : 0);
+            return true;
+
+        } else if (preference == mCamBtnMusicCtrl) {
+            value = mCamBtnMusicCtrl.isChecked();
+            Settings.System.putInt(mCr, Settings.System.CAMBTN_MUSIC_CONTROLS,
                     value ? 1 : 0);
             return true;
         } else if (preference == mShowBrightnessToggleslider) {
