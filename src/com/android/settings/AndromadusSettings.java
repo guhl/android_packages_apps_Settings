@@ -57,30 +57,35 @@ public class AndromadusSettings extends SettingsFragment
                 TRACKBALL_WAKE_TOGGLE);
         mTrackballWake.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.TRACKBALL_WAKE_SCREEN, 1) == 1);
+        mTrackballWake.setOnPreferenceChangeListener(this);
 
         /* Trackball unlock pref */
         mTrackballUnlockScreen = (CheckBoxPreference) mPrefSet.findPreference(
                 TRACKBALL_UNLOCK_TOGGLE);
         mTrackballUnlockScreen.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.TRACKBALL_UNLOCK_SCREEN, 1) == 1);
+        mTrackballUnlockScreen.setOnPreferenceChangeListener(this);
 
         /* Six bar pref */
         mUseSixbaricons = (CheckBoxPreference) mPrefSet.findPreference(
                 STATUSBAR_SIXBAR_SIGNAL);
         mUseSixbaricons.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUSBAR_6BAR_SIGNAL, 1) == 1);
+        mUseSixbaricons.setOnPreferenceChangeListener(this);
 
         /* Statusbar IME Switcher pref */
         mShowImeSwitcher = (CheckBoxPreference) mPrefSet.findPreference(
                 STATUSBAR_IME_TOGGLE);
         mShowImeSwitcher.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.SHOW_STATUSBAR_IME_SWITCHER, 0) == 1);
+        mShowImeSwitcher.setOnPreferenceChangeListener(this);
 
         /* Camera button play/pause pref */
         mCamBtnMusicCtrl = (CheckBoxPreference) mPrefSet.findPreference(
                 KEY_CAMBTN_MUSIC_CTRL);
         mCamBtnMusicCtrl.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.CAMBTN_MUSIC_CONTROLS, 0) == 1);
+        mCamBtnMusicCtrl.setOnPreferenceChangeListener(this);
 
         /* Kill App Longpress Back timeout duration pref */
         mKillAppLongpressBackTimeout = (EditTextPreference) mPrefSet.findPreference(KILL_APP_LONGPRESS_BACK_TIMEOUT);
@@ -91,6 +96,7 @@ public class AndromadusSettings extends SettingsFragment
                 SHOW_BRIGHTNESS_TOGGLESLIDER);
         mShowBrightnessToggleslider.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.SHOW_BRIGHTNESS_TOGGLESLIDER, 0) == 1);
+        mShowBrightnessToggleslider.setOnPreferenceChangeListener(this);
 
         /* Remove mTrackballWake on devices without trackballs */ 
         if (!getResources().getBoolean(R.bool.has_trackball)) {
@@ -133,45 +139,20 @@ public class AndromadusSettings extends SettingsFragment
                 Log.d(TAG, "Exception error on preference change.");
                 return false;
             }
+        } else if (TRACKBALL_WAKE_TOGGLE.equals(key)) {
+            Settings.System.putInt(mCr, Settings.System.TRACKBALL_WAKE_SCREEN, (Boolean) newValue ? 1 : 0);
+        } else if (TRACKBALL_UNLOCK_TOGGLE.equals(key)) {
+            Settings.System.putInt(mCr, Settings.System.TRACKBALL_UNLOCK_SCREEN, (Boolean) newValue ? 1 : 0);
+        } else if (STATUSBAR_SIXBAR_SIGNAL.equals(key)) {
+            Settings.System.putInt(mCr, Settings.System.STATUSBAR_6BAR_SIGNAL, (Boolean) newValue ? 1 : 0);
+        } else if (STATUSBAR_IME_TOGGLE.equals(key)) {
+            Settings.System.putInt(mCr, Settings.System.SHOW_STATUSBAR_IME_SWITCHER, (Boolean) newValue ? 1 : 0);
+        } else if (KEY_CAMBTN_MUSIC_CTRL.equals(key)) {
+            Settings.System.putInt(mCr, Settings.System.CAMBTN_MUSIC_CONTROLS, (Boolean) newValue ? 1 : 0);
+        } else if (SHOW_BRIGHTNESS_TOGGLESLIDER.equals(key)) {
+            Settings.System.putInt(mCr, Settings.System.SHOW_BRIGHTNESS_TOGGLESLIDER, (Boolean) newValue ? 1 : 0);
         }
         return true;
-    }
-
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        boolean value;
-        if (preference == mTrackballWake) {
-            value = mTrackballWake.isChecked();
-            Settings.System.putInt(mCr, Settings.System.TRACKBALL_WAKE_SCREEN,
-                    value ? 1 : 0);
-            return true;
-        } else if (preference == mTrackballUnlockScreen) {
-            value = mTrackballUnlockScreen.isChecked();
-            Settings.System.putInt(mCr, Settings.System.TRACKBALL_UNLOCK_SCREEN,
-                    value ? 1 : 0);
-            return true;
-        } else if (preference == mUseSixbaricons) {
-            value = mUseSixbaricons.isChecked();
-            Settings.System.putInt(mCr, Settings.System.STATUSBAR_6BAR_SIGNAL,
-                    value ? 1 : 0);
-            return true;
-        } else if (preference == mShowImeSwitcher) {
-            value = mShowImeSwitcher.isChecked();
-            Settings.System.putInt(mCr, Settings.System.SHOW_STATUSBAR_IME_SWITCHER,
-                    value ? 1 : 0);
-            return true;
-
-        } else if (preference == mCamBtnMusicCtrl) {
-            value = mCamBtnMusicCtrl.isChecked();
-            Settings.System.putInt(mCr, Settings.System.CAMBTN_MUSIC_CONTROLS,
-                    value ? 1 : 0);
-            return true;
-        } else if (preference == mShowBrightnessToggleslider) {
-            value = mShowBrightnessToggleslider.isChecked();
-            Settings.System.putInt(mCr, Settings.System.SHOW_BRIGHTNESS_TOGGLESLIDER,
-                    value ? 1 : 0);
-            return true;
-        }
-        return false;
     }
 
 }
