@@ -7,45 +7,45 @@
     <PreferenceCategory
         android:title="@string/andromadus_general" />
 
-	<EditTextPreference
-	    android:title="@string/pref_kill_app_longpress_back_timeout_title"
-	    android:dialogTitle="@string/pref_kill_app_longpress_back_timeout_dialogtitle"
-	    android:summary="@string/pref_kill_app_longpress_back_timeout_summary"
-	    android:key="pref_kill_app_longpress_back_timeout"
-	    android:singleLine="true"
-	    android:inputType="number"
-	    android:defaultValue="1000" />
+    <EditTextPreference
+        android:title="@string/pref_kill_app_longpress_back_timeout_title"
+        android:dialogTitle="@string/pref_kill_app_longpress_back_timeout_dialogtitle"
+        android:summary="@string/pref_kill_app_longpress_back_timeout_summary"
+        android:key="pref_kill_app_longpress_back_timeout"
+        android:singleLine="true"
+        android:inputType="number"
+        android:defaultValue="1000" />
 
-        <CheckBoxPreference android:key="pref_trackball_unlock_toggle"
-            android:title="@string/pref_trackball_unlock_toggle_title"
-            android:summary="@string/pref_trackball_unlock_toggle_summary" />
+    <CheckBoxPreference android:key="pref_trackball_unlock_toggle"
+        android:title="@string/pref_trackball_unlock_toggle_title"
+        android:summary="@string/pref_trackball_unlock_toggle_summary" />
 
-        <CheckBoxPreference android:key="pref_trackball_wake_toggle"
-            android:title="@string/pref_trackball_wake_toggle_title"
-            android:summary="@string/pref_trackball_wake_toggle_summary" />
+    <CheckBoxPreference android:key="pref_trackball_wake_toggle"
+        android:title="@string/pref_trackball_wake_toggle_title"
+        android:summary="@string/pref_trackball_wake_toggle_summary" />
 
-	<CheckBoxPreference android:key="cambtn_music_controls"
-		android:title="@string/cambtn_music_controls_title"
-		android:summary="@string/cambtn_music_controls_summary" />
+    <CheckBoxPreference android:key="cambtn_music_controls"
+        android:title="@string/cambtn_music_controls_title"
+        android:summary="@string/cambtn_music_controls_summary" />
 
     <PreferenceCategory
         android:title="@string/andromadus_statusbar" />
 
-        <CheckBoxPreference android:key="pref_show_statusbar_ime_switcher"
-            android:title="@string/pref_show_statusbar_ime_switcher_title"
-            android:summary="@string/pref_show_statusbar_ime_switcher_summary" />
+    <CheckBoxPreference android:key="pref_show_statusbar_ime_switcher"
+        android:title="@string/pref_show_statusbar_ime_switcher_title"
+        android:summary="@string/pref_show_statusbar_ime_switcher_summary" />
 
-        <CheckBoxPreference
-            android:key="pref_statusbar_sixbar_signal"
-            android:title="@string/pref_statusbar_sixbar_signal_title"
-            android:summary="@string/pref_statusbar_sixbar_signal_summary" />
+    <CheckBoxPreference
+        android:key="pref_statusbar_sixbar_signal"
+        android:title="@string/pref_statusbar_sixbar_signal_title"
+        android:summary="@string/pref_statusbar_sixbar_signal_summary" />
 
     <PreferenceCategory
         android:title="@string/andromadus_notification_drawer" />
 
-        <CheckBoxPreference android:key="pref_show_brightness_toggleslider"
-            android:title="@string/pref_show_brightness_toggleslider_title"
-            android:summary="@string/pref_show_brightness_toggleslider_summary"
-	        android:defaultValue="false" />
+    <CheckBoxPreference android:key="pref_show_brightness_toggleslider"
+        android:title="@string/pref_show_brightness_toggleslider_title"
+        android:summary="@string/pref_show_brightness_toggleslider_summary"
+        android:defaultValue="false" />
 
 </PreferenceScreen>
