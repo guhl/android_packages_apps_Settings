@@ -21,7 +21,6 @@ public class AndromadusSettings extends SettingsFragment
 
     private static final String TRACKBALL_WAKE_TOGGLE = "pref_trackball_wake_toggle";
     private static final String TRACKBALL_UNLOCK_TOGGLE = "pref_trackball_unlock_toggle";
-    private static final String BUTTON_CATEGORY = "pref_category_button_settings";
     private static final String STATUSBAR_SIXBAR_SIGNAL = "pref_statusbar_sixbar_signal";
     private static final String STATUSBAR_IME_TOGGLE = "pref_show_statusbar_ime_switcher";
     private static final String KEY_CAMBTN_MUSIC_CTRL = "cambtn_music_controls";
@@ -48,9 +47,6 @@ public class AndromadusSettings extends SettingsFragment
 
         mPrefSet = getPreferenceScreen();
         mCr = getContentResolver();
-
-        PreferenceScreen buttonCategory = (PreferenceScreen) mPrefSet
-                .findPreference(BUTTON_CATEGORY);
 
         /* Trackball wake pref */
         mTrackballWake = (CheckBoxPreference) mPrefSet.findPreference(
@@ -100,11 +96,11 @@ public class AndromadusSettings extends SettingsFragment
 
         /* Remove mTrackballWake on devices without trackballs */ 
         if (!getResources().getBoolean(R.bool.has_trackball)) {
-            buttonCategory.removePreference(mTrackballWake);
-            buttonCategory.removePreference(mTrackballUnlockScreen);
+            mPrefSet.removePreference(mTrackballWake);
+            mPrefSet.removePreference(mTrackballUnlockScreen);
         }
         if (Settings.Secure.getInt(mCr, Settings.Secure.KILL_APP_LONGPRESS_BACK, 0) == 0) {
-            buttonCategory.removePreference(mKillAppLongpressBackTimeout);
+            mPrefSet.removePreference(mKillAppLongpressBackTimeout);
         }
     }
 
