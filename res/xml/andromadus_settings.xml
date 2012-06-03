@@ -31,10 +31,6 @@
     <PreferenceCategory
         android:title="@string/andromadus_statusbar" />
 
-    <CheckBoxPreference android:key="pref_show_statusbar_ime_switcher"
-        android:title="@string/pref_show_statusbar_ime_switcher_title"
-        android:summary="@string/pref_show_statusbar_ime_switcher_summary" />
-
     <CheckBoxPreference
         android:key="pref_statusbar_sixbar_signal"
         android:title="@string/pref_statusbar_sixbar_signal_title"

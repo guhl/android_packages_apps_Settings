@@ -22,7 +22,6 @@ public class AndromadusSettings extends SettingsFragment
     private static final String TRACKBALL_WAKE_TOGGLE = "pref_trackball_wake_toggle";
     private static final String TRACKBALL_UNLOCK_TOGGLE = "pref_trackball_unlock_toggle";
     private static final String STATUSBAR_SIXBAR_SIGNAL = "pref_statusbar_sixbar_signal";
-    private static final String STATUSBAR_IME_TOGGLE = "pref_show_statusbar_ime_switcher";
     private static final String KEY_CAMBTN_MUSIC_CTRL = "cambtn_music_controls";
     private static final String KILL_APP_LONGPRESS_BACK_TIMEOUT = "pref_kill_app_longpress_back_timeout";
     private static final String SHOW_BRIGHTNESS_TOGGLESLIDER = "pref_show_brightness_toggleslider";
@@ -33,7 +32,6 @@ public class AndromadusSettings extends SettingsFragment
     private CheckBoxPreference mTrackballWake;
     private CheckBoxPreference mTrackballUnlockScreen;
     private CheckBoxPreference mUseSixbaricons;
-    private CheckBoxPreference mShowImeSwitcher;
     private CheckBoxPreference mCamBtnMusicCtrl;
     private CheckBoxPreference mShowBrightnessToggleslider;
 
@@ -68,13 +66,6 @@ public class AndromadusSettings extends SettingsFragment
         mUseSixbaricons.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUSBAR_6BAR_SIGNAL, 1) == 1);
         mUseSixbaricons.setOnPreferenceChangeListener(this);
-
-        /* Statusbar IME Switcher pref */
-        mShowImeSwitcher = (CheckBoxPreference) mPrefSet.findPreference(
-                STATUSBAR_IME_TOGGLE);
-        mShowImeSwitcher.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.SHOW_STATUSBAR_IME_SWITCHER, 0) == 1);
-        mShowImeSwitcher.setOnPreferenceChangeListener(this);
 
         /* Camera button play/pause pref */
         mCamBtnMusicCtrl = (CheckBoxPreference) mPrefSet.findPreference(
@@ -141,8 +132,6 @@ public class AndromadusSettings extends SettingsFragment
             Settings.System.putInt(mCr, Settings.System.TRACKBALL_UNLOCK_SCREEN, (Boolean) newValue ? 1 : 0);
         } else if (STATUSBAR_SIXBAR_SIGNAL.equals(key)) {
             Settings.System.putInt(mCr, Settings.System.STATUSBAR_6BAR_SIGNAL, (Boolean) newValue ? 1 : 0);
-        } else if (STATUSBAR_IME_TOGGLE.equals(key)) {
-            Settings.System.putInt(mCr, Settings.System.SHOW_STATUSBAR_IME_SWITCHER, (Boolean) newValue ? 1 : 0);
         } else if (KEY_CAMBTN_MUSIC_CTRL.equals(key)) {
             Settings.System.putInt(mCr, Settings.System.CAMBTN_MUSIC_CONTROLS, (Boolean) newValue ? 1 : 0);
         } else if (SHOW_BRIGHTNESS_TOGGLESLIDER.equals(key)) {
