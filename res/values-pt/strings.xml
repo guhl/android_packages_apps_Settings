@@ -292,7 +292,7 @@
     <string name="lock_after_timeout_summary" msgid="6128431871360905631">"<xliff:g id="TIMEOUT_STRING">%1$s</xliff:g> após modo de espera"</string>
     <string name="show_owner_info_on_lockscreen_label" msgid="5074906168357568434">"Mostrar inf. do proprietário"</string>
     <string name="owner_info_settings_title" msgid="2723190010708381889">"Info do proprietário"</string>
-    <string name="owner_info_settings_summary" msgid="3800834657847339570"></string>
+    <string name="owner_info_settings_summary" msgid="3800834657847339570">Exibir informação do proprietário na tela de bloqueio</string>
     <string name="owner_info_settings_edit_text_hint" msgid="4608681417960923911">"Digite o texto a ser exibido na tela de bloqueio"</string>
     <string name="location_settings_title" msgid="8935806698251432196">"Serviços de local"</string>
     <string name="security_settings_title" msgid="7945465324818485460">"Segurança"</string>
@@ -2208,4 +2208,38 @@
     <string name="safe_headset_restore_summary">Previne níveis altos de volume quando o fone de ouvido é conectado</string>
     <string name="weather_invert_lowhigh">Inverte temperaturas alta/baixa</string>
     <string name="profile_vibratoroverrides_title">Substituição de vibração</string>
+    <string name="status_bar_am_pm_info">Modo 24-horas do relógio está ativado</string>
+    <string name="lockscreen_calendar_title">Agenda</string>
+    <string name="lockscreen_calendar_summary">Exibir o próximo evento da agenda na tela de bloqueio</string>
+    <string name="lockscreen_calendar_enabled">Ativado</string>
+    <string name="calendar_title">Exibir próximo evento</string>
+    <string name="calendars_title">Eventos das agendas</string>
+    <string name="calendars_summary">Procurar por eventos nestas agendas</string>
+    <string name="calendar_reminders_only_title">Apenas lembretes</string>
+    <string name="calendar_reminders_only_summary">Exibir somente eventos com lembretes</string>
+    <string name="calendar_lookahead_title">Eventos futuros</string>
+    <string name="calendar_show_location_title">Localização do evento</string>
+    <string name="calendar_show_description_title">Descrição do evento</string>
+    <string name="calendar_lookahead_3hrs">3 horas</string>
+    <string name="calendar_lookahead_6hrs">6 horas</string>
+    <string name="calendar_lookahead_12hrs">12 horas</string>
+    <string name="calendar_lookahead_1day">1 dia</string>
+    <string name="calendar_lookahead_3days">3 dias</string>
+    <string name="calendar_lookahead_1wk">1 semana</string>
+    <string name="calendar_metadata_none">Não exibir</string>
+    <string name="calendar_metadata_first_line">Exibir primeira linha</string>
+    <string name="calendar_metadata_all">Exibir tudo</string>
+    <string name="owner_info_settings_enabled">Ativado</string>
+    <string name="display_category_animation_options_title">Animação</string>
+    <string name="display_electron_beam_animation_on_title">Animação ao ligar a tela</string>
+    <string name="display_electron_beam_animation_off_title">Animação ao desligar a tela</string>
+    <string name="ime_switcher_notify">Notificação do método de entrada</string>
+    <string name="ime_switcher_notify_summary">Exibir notificação do seletor de método de entrada</string>
+    <string name="device_hostname">Nome do dispositivo</string>
+    <string name="stylus_icon_enabled_title">Mostrar ícone ao usar caneta stylus</string>
+    <string name="stylus_icon_enabled_summary">Mostrar o ícone do ponteiro quando pairar ou desenhar com uma caneta stylus</string>
+
+    <!-- Status bar notification count -->
+    <string name="status_bar_notif_count_title">Mostrar contador de notificação</string>
+    <string name="status_bar_notif_count_summary">Mostrar o número de notificações pendentes na barra de status</string>
 </resources>
