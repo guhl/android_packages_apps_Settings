@@ -901,6 +901,8 @@
     <string name="bluetooth_tethering_overflow_error" msgid="6285122039489881969">"Макс. число подключаемых устройств: <xliff:g id="MAXCONNECTION">%1$d</xliff:g>"</string>
     <string name="bluetooth_untether_blank" msgid="2871192409329334813">"Подключение к <xliff:g id="DEVICE_NAME">%1$s</xliff:g> будет прервано."</string>
     <string name="tethering_help_button_text" msgid="656117495547173630">"Справка"</string>
+    <string name="tethering_advanced_text">Доп. настройки</string>
+    <string name="tethering_lease_time_text">Время аренды DHCP</string>
     <string name="network_settings_title" msgid="7967552516440151852">"Мобильная сеть"</string>
     <string name="location_title" msgid="1029961368397484576">"Мое местоположение"</string>
     <string name="location_network_based" msgid="5569673665032992664">"По координатам сети"</string>
@@ -1800,7 +1802,9 @@
     <string name="cm_sound_mode_sound">Звук</string>
     <string name="cm_sound_mode_soundVibrate">Звук+Вибро</string>
     <string name="pref_flash_mode_title">Режимы фонарика</string>
-    <string name="pref_flash_mode_summary">Яркий / Луч смерти</string>
+    <string name="pref_flash_mode_summary">Яркий/Луч смерти</string>
+    <string name="toggles_not_enough_space">Место ограничено 6-ю переключателями</string>
+
 
     <!-- Power Widget, Haptic feedback #CM -->
     <string name="expanded_haptic_feedback_title">Отклик на нажатие</string>
@@ -1814,6 +1818,7 @@
     <string name="status_bar_show_clock_summary">Показывать часы в строке состояния</string>
     <string name="status_bar_am_pm_title">Стиль AM/PM</string>
     <string name="status_bar_am_pm_summary">Стиль отображения AM/PM рядом с часами</string>
+    <string name="status_bar_am_pm_info">Включен 24-часовой формат</string>
     <string name="status_bar_battery_title">Стиль батареи</string>
     <string name="status_bar_battery_summary">Стиль отображения заряда аккумулятора</string>
     <string name="status_bar_toggle_brightness">Управление яркостью</string>
@@ -1835,7 +1840,7 @@
     <string name="lockscreen_target_reset_title">Сброс</string>
     <string name="lockscreen_target_reset_message">Удалить все созданные ярлыки экрана блокировки и восстановить значения по умолчанию?</string>
     <string name="lockscreen_target_empty">Пусто</string>
-    <string name="lockscreen_target_edit_title">Изменить ярлык</string>
+    <string name="lockscreen_target_edit_title">Изменить ярлык и иконку</string>
     <string name="lockscreen_target_edit_msg">Выберите или измените нужные приложения или действие и иконку</string>
 
     <!-- Lock Screen Weather -->
@@ -1850,8 +1855,8 @@
     <string name="weather_custom_location_dialog_message">Внимание: название города вводится на английском языке. Ошибочно введённое местоположение не будет отображаться.</string>
     <string name="weather_custom_location_hint">Город, штат/страна</string>
     <string name="weather_custom_location_title">Местоположение</string>
-    <string name="weather_show_location_title">Показать местоположение</string>
-    <string name="weather_show_timestamp_title">Показать метку времени</string>
+    <string name="weather_show_location_title">Показывать местоположение</string>
+    <string name="weather_show_timestamp_title">Показывать время</string>
     <string name="weather_refresh_interval">Частота обновления</string>
     <string name="weather_update">Обновить</string>
     <string name="weather_use_metric">Метрическая система</string>
@@ -1859,7 +1864,8 @@
     <string name="weather_retrieve_location_dialog_title">Не удаётся получить местоположение!</string>
     <string name="weather_retrieve_location_dialog_message">Определение местоположения по сети выключено.\n\nВключите определение местоположения по сети или введите местоположение вручную.</string>
     <string name="weather_retrieve_location_dialog_enable_button">Включить</string>
-    <string name="weather_invert_lowhigh">Изменить порядок высокой/низкой температуры</string>
+    <string name="weather_invert_lowhigh">Изменить порядок температур</string>
+    <string name="weather_progress_title">Проверка местоположения</string>
 
     <!-- Lock screen Weather - Update frequency -->
     <string name="weather_refresh_manual">Вручную</string>
@@ -1869,6 +1875,41 @@
     <string name="weather_refresh_4hrs">4 часа</string>
     <string name="weather_refresh_6hrs">6 часов</string>
     <string name="weather_refresh_8hrs">8 часов</string>
+
+    <!-- Lock screen Calendar -->
+    <string name="lockscreen_calendar_title">Календарь</string>
+    <string name="lockscreen_calendar_summary">Отображать на экране блокировки события из календаря</string>
+    <string name="lockscreen_calendar_enabled">Включено</string>
+    <string name="calendar_title">Показывать следующие события</string>
+    <string name="calendars_title">События календарей</string>
+    <string name="calendars_summary">Найти события из этих календарей</string>
+    <string name="calendar_reminders_only_title">Только с напоминаниями</string>
+    <string name="calendar_reminders_only_summary">Отображать только события с напоминаниями</string>
+    <string name="calendar_lookahead_title">Предпросмотр события</string>
+    <string name="calendar_show_location_title">Место проведения</string>
+    <string name="calendar_show_description_title">Описание события</string>
+
+    <!-- Lock screen calendar - lookahead -->
+    <string name="calendar_lookahead_3hrs">3 часа</string>
+    <string name="calendar_lookahead_6hrs">6 часов</string>
+    <string name="calendar_lookahead_12hrs">12 часов</string>
+    <string name="calendar_lookahead_1day">1 день</string>
+    <string name="calendar_lookahead_3days">3 дня</string>
+    <string name="calendar_lookahead_1wk">1 неделя</string>
+
+    <!-- Lock screen calendar - event metadata -->
+    <string name="calendar_metadata_none">Не показывать</string>
+    <string name="calendar_metadata_first_line">Показывать первую строку</string>
+    <string name="calendar_metadata_all">Показывать всё</string>
+
+    <!-- Lock screen background -->
+    <string name="lockscreen_custom_background_title">Фон</string>
+    <string name="lockscreen_custom_background_dialog_title">Выберите цвет</string>
+    <string name="lockscreen_background_result_successful">Фон изменён</string>
+    <string name="lockscreen_background_result_not_successful">Фон не изменён</string>
+    <string name="lockscreen_background_color_fill">Цвет заливки</string>
+    <string name="lockscreen_background_custom_image">Пользоват. изображение</string>
+    <string name="lockscreen_background_default_wallpaper">Обои по умолчанию</string>
 
     <!-- Profiles settings #CM -->
     <string name="profiles_settings_title">Профили</string>
@@ -2195,4 +2236,8 @@
 
     <!-- Hostname setting -->
     <string name="device_hostname">Имя хоста</string>
+
+    <!-- Status bar notification count -->
+    <string name="status_bar_notif_count_title">Счётчик уведомлений</string>
+    <string name="status_bar_notif_count_summary">Показывать количество новых уведомлений в строке состояния</string>
 </resources>
