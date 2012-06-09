@@ -7,6 +7,12 @@
     <PreferenceCategory
         android:title="@string/andromadus_general" />
 
+    <Preference
+        android:title="Quick Launch"
+        android:summary="Edit the shortcut keys on your keyboard">
+            <intent android:action="android.settings.QUICK_LAUNCH_SETTINGS" />
+    </Preference>
+
     <EditTextPreference
         android:title="@string/pref_kill_app_longpress_back_timeout_title"
         android:dialogTitle="@string/pref_kill_app_longpress_back_timeout_dialogtitle"
