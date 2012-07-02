@@ -34,6 +34,7 @@ import android.os.ServiceManager;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
@@ -54,6 +55,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_DISPLAY_ROTATION = "display_rotation";
     private static final String KEY_ELECTRON_BEAM_ANIMATION_ON = "electron_beam_animation_on";
     private static final String KEY_ELECTRON_BEAM_ANIMATION_OFF = "electron_beam_animation_off";
+    private static final String KEY_ELECTRON_BEAM_CATEGORY_ANIMATION = "category_animation_options";
+    private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
     private static final String KEY_RENDER_EFFECT = "pref_render_effect";
 
@@ -134,10 +137,34 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mElectronBeamAnimationOff.setChecked(Settings.System.getInt(resolver,
                 Settings.System.ELECTRON_BEAM_ANIMATION_OFF, 1) == 1);
 
+        mElectronBeamAnimationOn = (CheckBoxPreference) findPreference(KEY_ELECTRON_BEAM_ANIMATION_ON);
+        if(getResources().getInteger(com.android.internal.R.integer.config_screenOnAnimation) >= 0) {
+            mElectronBeamAnimationOn.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.ELECTRON_BEAM_ANIMATION_ON, 0) == 1);
+        } else {
+            getPreferenceScreen().removePreference(mElectronBeamAnimationOn);
+        }
+        mElectronBeamAnimationOff = (CheckBoxPreference) findPreference(KEY_ELECTRON_BEAM_ANIMATION_OFF);
+        if(getResources().getBoolean(com.android.internal.R.bool.config_screenOffAnimation)) {
+            mElectronBeamAnimationOff.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.ELECTRON_BEAM_ANIMATION_OFF, 1) == 1);
+        } else {
+            getPreferenceScreen().removePreference(mElectronBeamAnimationOff);
+        }
+        if(getResources().getInteger(com.android.internal.R.integer.config_screenOnAnimation) < 0 &&
+              !getResources().getBoolean(com.android.internal.R.bool.config_screenOffAnimation)) {
+            getPreferenceScreen().removePreference((PreferenceCategory) findPreference(KEY_ELECTRON_BEAM_CATEGORY_ANIMATION));
+        }
+
         mVolumeWake = (CheckBoxPreference) findPreference(KEY_VOLUME_WAKE);
         if (mVolumeWake != null) {
-            mVolumeWake.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
+            if (!getResources().getBoolean(R.bool.config_show_volumeRockerWake)) {
+                getPreferenceScreen().removePreference(mVolumeWake);
+                getPreferenceScreen().removePreference((PreferenceCategory) findPreference(KEY_WAKEUP_CATEGORY));
+            } else {
+                mVolumeWake.setChecked(Settings.System.getInt(resolver,
+                        Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
+            }
 
         }
 

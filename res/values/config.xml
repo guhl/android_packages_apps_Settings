@@ -29,6 +29,10 @@
          ad-hoc support and so we should hide ad-hoc network on those devices -->
     <bool name="config_show_adhoc_network">true</bool>
 
+    <!-- Volume Rocker Wake Support. Some devices do not support (PMU) this.
+         Setting to false will disable Volume Rocker Wake support -->
+    <bool name="config_show_volumeRockerWake">true</bool>
+
     <!-- Whether or not to display the trackball settings -->
     <bool name="has_trackball">false</bool>
 
