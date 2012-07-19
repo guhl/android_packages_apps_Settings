@@ -2265,4 +2265,27 @@ ice shows the slider widgets before the unlock option [CHAR LIMIT=28]-->
     <string name="increasing_ring_interval_3seconds">3 Sekunden</string>
     <string name="increasing_ring_interval_5seconds">5 Sekunden</string>
     <string name="increasing_ring_interval_10seconds">10 Sekunden</string>
+
+<!-- Andromadus -->
+    <string name="andromadus_settings">Andromadus</string>
+    <string name="andromadus_general">Allgemein</string>
+    <string name="andromadus_statusbar">Statusleiste</string>
+    <string name="andromadus_notification_drawer">Benachrichtigungsanzeige</string>
+    <string name="pref_statusbar_sixbar_signal_title">Benutze sechs Signalbalken</string>
+    <string name="pref_statusbar_sixbar_signal_summary">Sechs statt vier Signalbalken im Empfangssymbol verwenden</string>
+    <string name="pref_trackball_wake_toggle_title">Trackpad aufwecken</string>
+    <string name="pref_trackball_wake_toggle_summary">Gerät durch Drücken des Trackpads aufwecken</string>
+    <string name="pref_trackball_unlock_toggle_title">Trackpad entsperren</string>
+    <string name="pref_trackball_unlock_toggle_summary">Gerät durch Drücken des Trackpads entsperren</string>
+    <!-- Setting for Camera button play/pause controls -->
+    <string name="cambtn_music_controls_title">Kameraknopf Musikkontrolle</string>
+    <string name="cambtn_music_controls_summary">Musik durch Gedrückthalten des Kameraknopfs pausieren, wenn der Bildschirm aus ist</string>
+    <!-- Kill App Longpress Back timeout duration -->
+    <string name="pref_kill_app_longpress_back_timeout_title">Dauer des Gedrückthaltens der Zurücktaste zum App beenden</string>
+    <string name="pref_kill_app_longpress_back_timeout_dialogtitle">Dauer in ms (500-2000)</string>
+    <string name="pref_kill_app_longpress_back_timeout_summary">Zurücktaste für 1000ms gedrückt halten, um Prozess zu beenden</string>
+    <!-- Show Brightness Toggleslider -->
+    <string name="pref_show_brightness_toggleslider_title">Helligkeits Schieberegler</string>
+    <string name="pref_show_brightness_toggleslider_summary">Helligkeits Schieberegler in der Benachrichtigungsanzeige anzeigen</string>
+
 </resources>
