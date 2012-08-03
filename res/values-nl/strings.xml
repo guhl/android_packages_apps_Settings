@@ -341,7 +341,7 @@
 
     <string name="crypt_keeper_settings_title" msgid="4219233835490520414">"Versleuteling"</string>
     <string name="crypt_keeper_encrypt_title" product="tablet" msgid="1060273569887301457">"Tablet versleutelen"</string>
-    <string name="crypt_keeper_encrypt_title" product="default" msgid="1878996487755806122">"Telefoon versleuteln"</string>
+    <string name="crypt_keeper_encrypt_title" product="default" msgid="1878996487755806122">"Telefoon versleutelen"</string>
     <string name="crypt_keeper_encrypt_summary" product="tablet" msgid="6291564408810586">"Een numerieke PIN-code of wachtwoord vereisen om uw tablet te ontsleutelen wanneer u deze inschakelt"</string>
     <string name="crypt_keeper_encrypt_summary" product="default" msgid="514138079795442371">"Een numerieke PIN-code of wachtwoord vereisen om uw telefoon te ontsleutelen wanneer u deze inschakelt"</string>
     <string name="crypt_keeper_encrypted_summary" msgid="1868233637888132906">"Versleuteld"</string>
@@ -618,7 +618,6 @@
     <string name="wifi_p2p_menu_search" msgid="7189970585393813135">"Zoeken"</string>
     <string name="wifi_p2p_menu_create_group" msgid="7595229161883902082">"Groep maken"</string>
     <string name="wifi_p2p_menu_remove_group" msgid="4844634506540667517">"Groep verwijderen"</string>
-    <string name="wifi_p2p_menu_advanced" msgid="2578792521809265949">"Geavanceerd"</string>
     <string name="wifi_p2p_available_devices" msgid="5943352520059654483">"Beschikbare apparaten"</string>
     <string name="wifi_p2p_on_summary">Wi-Fi Direct inschakelen</string>
     <string name="wifi_p2p_settings">Wi-Fi Direct-instellingen</string>
@@ -1221,8 +1220,6 @@
     <string name="adb_over_network">ADB over netwerk</string>
     <string name="adb_over_network_summary">TCP/IP-foutopsporing over netwerkinterfaces (Wi-Fi, USB-netwerken) inschakelen. Deze instelling wordt hersteld na herstarten</string>
     <string name="adb_over_network_warning">WAARSCHUWING: Wanneer ADB over netwerk is ingeschakeld, is inbraak in uw telefoon mogelijk op alle verbonden netwerken, inclusief uw GSM-verbinding!\n\nGebruik deze optie enkel als u met een betrouwbaar netwerk bent verbonden.\n\nWeet u zeker dat u deze optie wilt inschakelen?</string>
-    <string name="adb_notify">USB-foutopsporingsmelding</string>
-    <string name="adb_notify_summary">Toon melding indien u een USB-verbinding met foutopsporing ingeschakeld heeft</string>
     <string name="verifier_device_identifier" msgid="5079997701152411060">"Apparaat-id voor ontwikkeling"</string>
     <string name="verifier_device_identifier_not_available" msgid="1272065992066977324">"Apparaatgegevens niet beschikbaar"</string>
     <string name="keep_screen_on" msgid="1146389631208760344">"Actief houden"</string>
@@ -1701,13 +1698,9 @@
     <!-- Power Widget -->
     <string name="power_widget_title">Energiewidget</string>
     <string name="title_expanded_widget">Toon energiewidget</string>
-    <string name="summary_expanded_widget">Toon energiewidget in het notificatiepaneel</string>
     <string name="title_expanded_hide_onchange">Verberg bij veranderingen</string>
-    <string name="summary_expanded_hide_onchange">Verberg het notificatiepaneel als een widgetknop is aangeraakt</string>
     <string name="title_expanded_hide_indicator">Verberg indicator</string>
-    <string name="summary_expanded_hide_indicator">Verberg indicatoren van energiewidget</string>
     <string name="title_expanded_hide_scrollbar">Verberg schuifbalk</string>
-    <string name="summary_expanded_hide_scrollbar">Verberg de schuifbalk als het maximaal aantal widgetknoppen overschreden is</string>
     <string name="title_widget_picker">Widgetknoppen</string>
     <string name="summary_widget_picker">Selecteer welke knoppen in de energiewidget getoond moeten worden</string>
     <string name="title_widget_order">Volgorde van widgetknoppen</string>
@@ -1739,9 +1732,7 @@
     <string name="cm_brightness_mode_auto">Automatisch</string>
     <string name="cm_brightness_mode_dim">Dimmen</string>
     <string name="pref_network_mode_title">Netwerkmodi</string>
-    <string name="pref_network_mode_summary">Kies hoe de netwerkmodusknop modi veranderen</string>
     <string name="pref_screentimeout_mode_title">Modi schermtime-out</string>
-    <string name="pref_screentimeout_mode_summary">Kies hoe de schermtime-out-knoppen modi veranderen</string>
     <string name="pref_ring_mode_title">Geluidsmodi</string>
     <string name="pref_ring_mode_summary">Kies hoe de geluidsknop modi veranderen</string>
     <string name="cm_sound_mode_silent">Stil</string>
@@ -1749,10 +1740,10 @@
     <string name="cm_sound_mode_sound">Geluid</string>
     <string name="cm_sound_mode_soundVibrate">Geluid &amp; trillen</string>
     <string name="pref_flash_mode_title">Zaklampmodus</string>
-    <string name="pref_flash_mode_summary">Kies fel licht</string>
+
     <!-- Power Widget, Haptic feedback -->
     <string name="expanded_haptic_feedback_title">Haptische feedback</string>
-    <string name="expanded_haptic_feedback_summary">Schakel haptische feedback in/uit</string>
+
     <!-- Status bar -->
     <string name="status_bar_title">Statusbalk</string>
     <string name="status_bar_clock_title">Klok</string>
@@ -1761,6 +1752,7 @@
     <string name="status_bar_show_clock_summary">Toon de klok in de statusbalk</string>
     <string name="status_bar_am_pm_title">12-uurs formaat</string>
     <string name="status_bar_am_pm_summary">AM/PM-weergavestijl naast de klok</string>
+    <string name="status_bar_am_pm_info">24-uurs formaat is ingeschakeld</string>
     <string name="status_bar_battery_title">Batterijstatus-stijl</string>
     <string name="status_bar_battery_summary">Weergavestijl van batterijstatus</string>
     <string name="status_bar_toggle_brightness">Helderheid beheren</string>
@@ -1785,6 +1777,61 @@
     <string name="lockscreen_target_empty">Niet toegewezen</string>
     <string name="lockscreen_target_edit_title">Toewijzen snelkoppeling</string>
     <string name="lockscreen_target_edit_msg">Kies of wijzig de snelkoppeling of het icoon</string>
+
+    <!-- Lock Screen Weather -->
+    <string name="lockscreen_weather_title">Weer</string>
+    <string name="lockscreen_weather_summary">Toon weersinformatie op het vergrendelscherm</string>
+    <string name="lockscreen_weather_enabled">Inschakelen</string>
+    <string name="weather_enable">Toon weer</string>
+    <string name="weather_source">Yahoo! Weather</string>
+    <string name="weather_use_custom_location">Gebruik aangepaste locatie</string>
+    <string name="weather_geolocated">Netwerkgebaseerde geolocatie</string>
+    <string name="weather_custom_location_dialog_title">Locatie invoeren</string>
+    <string name="weather_custom_location_hint">Stad, staat/land</string>
+    <string name="weather_custom_location_title">Locatie</string>
+    <string name="weather_show_location_title">Toon locatie</string>
+    <string name="weather_show_timestamp_title">Toon tijd</string>
+    <string name="weather_refresh_interval">Verversingsinterval</string>
+    <string name="weather_use_metric">Gebruik metrische eenheden</string>
+    <string name="weather_retrieve_location_dialog_title">Kan locatie niet bepalen!</string>
+    <string name="weather_retrieve_location_dialog_message">Netwerkgebaseerde geolocatie is uitgeschakeld.\n\nVoer een aangepaste locatie in of schakel netwerkgebaseerde geolocatie in</string>
+    <string name="weather_retrieve_location_dialog_enable_button">Inschakelen</string>
+    <string name="weather_invert_lowhigh">Draai lage/hoge temperaturen om</string>
+
+    <!-- Lock screen Weather - Update frequency -->
+    <string name="weather_refresh_manual">Handmatig</string>
+    <string name="weather_refresh_30min">30 minuten</string>
+    <string name="weather_refresh_60min">60 minuten</string>
+    <string name="weather_refresh_2hrs">2 uur</string>
+    <string name="weather_refresh_4hrs">4 uur</string>
+    <string name="weather_refresh_6hrs">6 uur</string>
+    <string name="weather_refresh_8hrs">8 uur</string>
+
+    <!-- Lock screen Calendar -->
+    <string name="lockscreen_calendar_title">Agenda</string>
+    <string name="lockscreen_calendar_summary">Toon de volgende afspraak op het vergrendelscherm</string>
+    <string name="lockscreen_calendar_enabled">Ingeschakeld</string>
+    <string name="calendar_title">Toon volgende afspraak</string>
+    <string name="calendars_title">Agenda\'s</string>
+    <string name="calendars_summary">Toon de afspraken uit deze agenda\'s</string>
+    <string name="calendar_reminders_only_title">Alleen herinneringen</string>
+    <string name="calendar_reminders_only_summary">Alleen afspraken met herinneringen tonen</string>
+    <string name="calendar_lookahead_title">Vooruitkijken op afspraken</string>
+    <string name="calendar_show_location_title">Toon de afspraakplaats</string>
+    <string name="calendar_show_description_title">Toon de beschrijving van de afspraak</string>
+
+    <!-- Lock screen calendar - lookahead -->
+    <string name="calendar_lookahead_3hrs">3 uur</string>
+    <string name="calendar_lookahead_6hrs">6 uur</string>
+    <string name="calendar_lookahead_12hrs">12 uur</string>
+    <string name="calendar_lookahead_1day">1 dag</string>
+    <string name="calendar_lookahead_3days">3 dagen</string>
+    <string name="calendar_lookahead_1wk">1 week</string>
+
+    <!-- Lock screen calendar - event metadata -->
+    <string name="calendar_metadata_none">Niet tonen</string>
+    <string name="calendar_metadata_first_line">Toon eerste regel</string>
+    <string name="calendar_metadata_all">Toon alles</string>
 
     <!-- Profiles settings -->
     <string name="profiles_settings_title">Profielen</string>
@@ -1820,6 +1867,9 @@
     <string name="quiet_hours_active_to">tot</string>
     <string name="start_time_title">Begin</string>
     <string name="end_time_title">Einde</string>
+    <!-- Safe headset volume restore checkbox -->
+    <string name="safe_headset_restore_title">Veilig headsetvolume</string>
+    <string name="safe_headset_restore_summary">Voorkomt hoog volume als de headset voor de eerste keer wordt aangesloten</string>
     <!-- Add Profile -->
     <string name="add_profile_dialog_title">Maak nieuw profiel</string>
     <string name="profile_name_title">Naam</string>
@@ -1966,9 +2016,6 @@
     <string name="root_access_adb">Alleen via ADB</string>
     <string name="root_access_all">Apps en via ADB</string>
 
-    <!-- Battery pulse light -->
-    <string name="battery_pulse_title">Knipperend licht bij laag batterijniveau</string>
-
     <!-- Settings - Storage -->
     <!-- [CHAR LIMIT=30]-->
     <string name="storage_menu_storage">Opslagbeheer</string>
@@ -2059,22 +2106,6 @@
     <string name="profile_selected">Geselecteerd profiel: %1$s</string>
     <string name="profile_nfc_text">Een profiel naar een NFC-tag schrijven staat u toe om de tag te raken om dat profiel te kiezen. Een tweede keer raken zal het vorig gekozen profiel selecteren.</string>
 
-    <!-- Display Settings : Render effect -->
-    <string name="pref_render_effect_title">Rendereffect</string>
-    <string name="pref_render_effect_summary">Door het scherm te gebruiken kleuren kiezen</string>
-
-    <string name="pref_render_effect_none">Geen rendereffect</string>
-    <string name="pref_render_effect_night">Nachtmodus (3700K)</string>
-    <string name="pref_render_effect_green">Terminal (groen)</string>
-    <string name="pref_render_effect_blue">Blauw</string>
-    <string name="pref_render_effect_amber">Amber</string>
-    <string name="pref_render_effect_salmon">Zalm</string>
-    <string name="pref_render_effect_fuscia">Fuchsia</string>
-    <string name="pref_render_effect_calibrated">Gekalibreerd (N1)</string>
-    <string name="pref_render_effect_calibrated_red">Gekalibreerd (N1) laag rood</string>
-    <string name="pref_render_effect_calibrated_cool">Gekalibreerd (N1) koud</string>
-    <string name="pref_render_effect_red">Rood</string>
-
     <!-- Display - Rotation -->
     <string name="display_rotation_title">Rotatie</string>
     <string name="display_rotation_enabled">Ingeschakeld</string>
@@ -2090,7 +2121,6 @@
     <string name="stubbed">Voorkeursopvulling</string>
     <string name="stubbed_summary">Tijdelijk opgevuld totdat functionaliteit is toegevoegd</string>
 
-    <string name="toggles_not_enough_space">Max. 6 schakelaars</string>
     <string name="weather_progress_title">Locatie controleren</string>
     <string name="lockscreen_custom_background_title">Achtergrond</string>
     <string name="lockscreen_custom_background_dialog_title">Kleur kiezen</string>
