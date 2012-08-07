@@ -4772,7 +4772,7 @@
     <string name="device_hostname">Device hostname</string>
 
     <!-- About phone screen,  setting option name-->
-    <string name="mod_version">CyanogenMod version</string>
+    <string name="mod_version">Andromadus version</string>
     <string name="mod_version_default">Unknown</string>
     <!-- About phone screen, build date of ROM -->
     <string name="build_date">Build date</string>
@@ -4803,4 +4803,29 @@
     <string name="power_menu_screenshot_title">Power menu screenshot</string>
 
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
+
+    <!-- Andromadus -->
+    <string name="andromadus_settings">Andromadus</string>
+    <string name="andromadus_general">General</string>
+    <string name="andromadus_statusbar">Status Bar</string>
+    <string name="andromadus_notification_drawer">Notification Drawer</string>
+    <string name="pref_statusbar_sixbar_signal_title">Use sixbar signal icons</string>
+    <string name="pref_statusbar_sixbar_signal_summary">Choose whether or or not to use sixbar icons (modded) for cell signal strength</string>
+    <string name="pref_trackball_wake_toggle_title">Trackball wake</string>
+    <string name="pref_trackball_wake_toggle_summary">Allow trackball to wake the device</string>
+    <string name="pref_trackball_unlock_toggle_title">Trackball unlock</string>
+    <string name="pref_trackball_unlock_toggle_summary">Allow trackball to unlock the device</string>
+    <!-- Setting for Camera button play/pause controls -->
+    <string name="cambtn_music_controls_title">Camera button music controls</string>
+    <string name="cambtn_music_controls_summary">When screen off, long-pressing the camera button will play/pause the active music track</string>
+    <!-- Kill App Longpress Back timeout duration -->
+    <string name="pref_kill_app_longpress_back_timeout_title">Kill app longpress back timeout</string>
+    <string name="pref_kill_app_longpress_back_timeout_dialogtitle">Duration in ms (500-2000)</string>
+    <string name="pref_kill_app_longpress_back_timeout_summary">Hold down back button for 1000ms to kill a process</string>
+    <!-- Show Brightness Toggleslider -->
+    <string name="pref_show_brightness_toggleslider_title">Show Brightness Toggleslider</string>
+    <string name="pref_show_brightness_toggleslider_summary">In the notification area</string>
+
+    <!-- **** ANDROMADUS ADDITIONS END **** -->
+
 </resources>
