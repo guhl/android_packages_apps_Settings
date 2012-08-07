@@ -4802,6 +4802,9 @@
     <!-- Power menu screenshot -->
     <string name="power_menu_screenshot_title">Power menu screenshot</string>
 
+    <!-- Launches Dev Tools -->
+    <string name="development_tools_title">Launch Tools</string>
+
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
 
     <!-- Andromadus -->
