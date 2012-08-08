@@ -4818,10 +4818,6 @@
     <!-- Setting for Camera button play/pause controls -->
     <string name="cambtn_music_controls_title">Camera button music controls</string>
     <string name="cambtn_music_controls_summary">When screen off, long-pressing the camera button will play/pause the active music track</string>
-    <!-- Kill App Longpress Back timeout duration -->
-    <string name="pref_kill_app_longpress_back_timeout_title">Kill app longpress back timeout</string>
-    <string name="pref_kill_app_longpress_back_timeout_dialogtitle">Duration in ms (500-2000)</string>
-    <string name="pref_kill_app_longpress_back_timeout_summary">Hold down back button for 1000ms to kill a process</string>
     <!-- Show Brightness Toggleslider -->
     <string name="pref_show_brightness_toggleslider_title">Show Brightness Toggleslider</string>
     <string name="pref_show_brightness_toggleslider_summary">In the notification area</string>
