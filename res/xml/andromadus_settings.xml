@@ -21,4 +21,12 @@
         android:title="@string/pref_trackball_wake_toggle_title"
         android:summary="@string/pref_trackball_wake_toggle_summary" />
 
+    <PreferenceCategory
+        android:title="@string/andromadus_statusbar" />
+
+    <CheckBoxPreference
+        android:key="pref_statusbar_sixbar_signal"
+        android:title="@string/pref_statusbar_sixbar_signal_title"
+        android:summary="@string/pref_statusbar_sixbar_signal_summary" />
+
 </PreferenceScreen>
