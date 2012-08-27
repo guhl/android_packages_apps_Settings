@@ -7,6 +7,11 @@
     <PreferenceCategory
         android:title="@string/andromadus_general" />
 
+    <PreferenceScreen
+        android:key="lcd_density
+        android:fragment="com.android.settings.cyanogenmod.DensityChanger"
+        android:title="@string/lcd_density_wizard" />
+
     <Preference
         android:title="Quick Launch"
         android:summary="Edit the shortcut keys on your keyboard">

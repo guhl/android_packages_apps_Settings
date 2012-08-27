@@ -19,6 +19,7 @@ public class AndromadusSettings extends SettingsFragment
 
     private final static String TAG = AndromadusSettings.class.getSimpleName();
 
+    private static final String KEY_LCD_DENSITY = "lcd_density";
     private static final String TRACKBALL_WAKE_TOGGLE = "pref_trackball_wake_toggle";
     private static final String TRACKBALL_UNLOCK_TOGGLE = "pref_trackball_unlock_toggle";
     private static final String STATUSBAR_SIXBAR_SIGNAL = "pref_statusbar_sixbar_signal";

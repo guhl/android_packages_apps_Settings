@@ -4878,6 +4878,20 @@
     <string name="pref_trackball_wake_toggle_summary">Allow trackball to wake the device</string>
     <string name="pref_trackball_unlock_toggle_title">Trackball unlock</string>
     <string name="pref_trackball_unlock_toggle_summary">Allow trackball to unlock the device</string>
+    <!-- LCD Density -->
+    <string name="lcd_density_wizard">LCD Density Wizard</string>
+    <string name="follow_through_title">Follow through!</string>
+    <string name="follow_through_summary">Make sure you follow the steps one-by-one and complete each one before proceeding to the next.</string>
+    <string name="stock_density_title">1. Change LCD Density to stock value</string>
+    <string name="stock_density_summary">Tablets and older phones use 160. Most phones use 240. Galaxy Nexus uses 320 by default.</string>
+    <string name="reboot_title">2. Reboot!</string>
+    <string name="reboot_summary">Come back here after the reboot and complete the rest of the steps!</string>
+    <string name="clear_market_data_title">3. Clear market data</string>
+    <string name="clear_market_data_cleared">Market data cleared</string>
+    <string name="open_market_title">4. Open Market and hit accept</string>
+    <string name="open_market_summary">Press back when done to return here.</string>
+    <string name="custom_density_title">5. Change density to whatever you like!</string>
+    <string name="custom_density_summary">If you ever have compatibility issues with the market, be sure to return here and repeat the process.</string>
     <!-- Setting for Camera button play/pause controls -->
     <string name="cambtn_music_controls_title">Camera button music controls</string>
     <string name="cambtn_music_controls_summary">When screen off, long-pressing the camera button will play/pause the active music track</string>
