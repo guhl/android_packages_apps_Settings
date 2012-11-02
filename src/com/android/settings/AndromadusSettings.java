@@ -79,7 +79,7 @@ public class AndromadusSettings extends SettingsFragment
             mPrefSet.removePreference(mTrackballUnlockScreen);
         }
             // Sweep to wake
-        if (!Utils.fileExists(S2W_FILE) == null) {
+        if (!Utils.fileExists(S2W_FILE) == false) {
             ms2wPref.setEnabled(false);
         }
 
