@@ -2,8 +2,6 @@ package com.android.settings;
 
 import android.content.ContentResolver;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
 import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
@@ -27,9 +25,7 @@ public class AndromadusSettings extends SettingsFragment
     private static final String TRACKBALL_UNLOCK_TOGGLE = "pref_trackball_unlock_toggle";
     private static final String STATUSBAR_SIXBAR_SIGNAL = "pref_statusbar_sixbar_signal";
     public static final String S2W_FILE = "/sys/android_touch/sweep2wake";
-    public static final String S2W_SETTING = "sweep2wake_setting";
-
-    private String ms2wlist;
+    public static final String SWEEP_2_WAKE = "sweep2wake_setting";
 
     private ContentResolver mCr;
     private PreferenceScreen mPrefSet;
@@ -52,7 +48,9 @@ public class AndromadusSettings extends SettingsFragment
         mPrefSet = getPreferenceScreen();
         mCr = getContentResolver();
 
-        ms2wPref = (ListPreference) mPrefSet.findPreference(S2W_FILE);
+        /* Sweep2wake pref */
+        ms2wPref = (ListPreference) mPrefSet.findPreference(SWEEP_2_WAKE);
+        ms2wPref.setOnPreferenceChangeListener(this);
 
         /* Trackball wake pref */
         mTrackballWake = (CheckBoxPreference) mPrefSet.findPreference(
@@ -83,26 +81,12 @@ public class AndromadusSettings extends SettingsFragment
             // Sweep to wake
         if (!Utils.fileExists(S2W_FILE) == null) {
             ms2wPref.setEnabled(false);
-
-        } else {
-            ms2wPref.setEntryValues(ms2woptions);
-            ms2wPref.setEntries(ms2woptions);
-            ms2wPref.setValue(temp);
-            ms2wPref.setSummary(String.format(ms2wlist, temp));
-            ms2wPref.setOnPreferenceChangeListener(this);
         }
 
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         String key = preference.getKey();
-        String fname = "";
-
-        if (newValue != null) {
-            if (preference == ms2wPref) {
-                fname = S2W_FILE;
-            }
-        }
         
         if (TRACKBALL_WAKE_TOGGLE.equals(key)) {
             Settings.System.putInt(mCr, Settings.System.TRACKBALL_WAKE_SCREEN, (Boolean) newValue ? 1 : 0);
@@ -110,9 +94,9 @@ public class AndromadusSettings extends SettingsFragment
             Settings.System.putInt(mCr, Settings.System.TRACKBALL_UNLOCK_SCREEN, (Boolean) newValue ? 1 : 0);
         } else if (STATUSBAR_SIXBAR_SIGNAL.equals(key)) {
             Settings.System.putInt(mCr, Settings.System.STATUSBAR_6BAR_SIGNAL, (Boolean) newValue ? 1 : 0);
-        } else if (preference == ms2wPref) {
-                    ms2wPref.setSummary(String.format(ms2woption,
-                            newValue));
+        } else if (SWEEP_2_WAKE.equals(key)) {
+            int value = Integer.valueOf((String) newValue);
+            Settings.System.putInt(mCr, Settings.System.SWEEP_2_WAKE, value);
         }
         return true;
     }
