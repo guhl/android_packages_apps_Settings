@@ -4953,6 +4953,11 @@
     <!-- Show Brightness Toggleslider -->
     <string name="pref_show_brightness_toggleslider_title">Show Brightness Toggleslider</string>
     <string name="pref_show_brightness_toggleslider_summary">In the notification area</string>
+    <!-- Sweep 2 Wake Settings -->
+    <string name="sweep2wake_title">Sweep2Wake</string>
+    <string name="sweep2wake_pref_0">Disabled</string>
+    <string name="sweep2wake_pref_1">Enabled</string>
+    <string name="sweep2wake_pref_2">Enabled with backlight</string>
 
     <!-- **** ANDROMADUS ADDITIONS END **** -->
 
