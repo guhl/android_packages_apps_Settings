@@ -24,6 +24,7 @@ public class AndromadusSettings extends SettingsFragment
     private static final String TRACKBALL_WAKE_TOGGLE = "pref_trackball_wake_toggle";
     private static final String TRACKBALL_UNLOCK_TOGGLE = "pref_trackball_unlock_toggle";
     private static final String STATUSBAR_SIXBAR_SIGNAL = "pref_statusbar_sixbar_signal";
+    public static final String S2W_PREF = "sweep2wake_setting";
     public static final String S2W_FILE = "/sys/android_touch/sweep2wake";
 
     private String ms2wFormat;
@@ -40,8 +41,7 @@ public class AndromadusSettings extends SettingsFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String temp;
-        String[] ms2woptions = new String[0];
+        String temp = "";
         ms2wFormat = getString(R.string.sweep2wake_summary);
 
         addPreferencesFromResource(R.xml.andromadus_settings);
@@ -50,7 +50,7 @@ public class AndromadusSettings extends SettingsFragment
         mCr = getContentResolver();
 
         /* Sweep2wake pref */
-        ms2wPref = (ListPreference) mPrefSet.findPreference(S2W_FILE);
+        ms2wPref = (ListPreference) mPrefSet.findPreference(S2W_PREF);
 
         /* Trackball wake pref */
         mTrackballWake = (CheckBoxPreference) mPrefSet.findPreference(
@@ -80,13 +80,24 @@ public class AndromadusSettings extends SettingsFragment
         }
             // Sweep to wake
         if (!Utils.fileExists(S2W_FILE) || (temp = Utils.fileReadOneLine(S2W_FILE)) == null) {
-            ms2wPref.setEnabled(false);
+            mPrefSet.removePreference(ms2wPref);
         } else {
             ms2wPref.setEntryValues(R.array.sweep2wake_menu_values);
             ms2wPref.setEntries(R.array.sweep2wake_menu_entries);
             ms2wPref.setValue(temp);
             ms2wPref.setSummary(String.format(ms2wFormat, temp));
             ms2wPref.setOnPreferenceChangeListener(this);
+        }
+    }
+
+    @Override
+    public void onResume() {
+        String temp;
+
+        super.onResume();
+
+        if (Utils.fileExists(S2W_FILE) && (temp = Utils.fileReadOneLine(S2W_FILE)) != null) {
+            ms2wPref.setSummary(String.format(ms2wFormat, temp));
         }
     }
 
