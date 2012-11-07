@@ -4956,6 +4956,7 @@
     <!-- Sweep 2 Wake Settings -->
     <string name="sweep2wake_title">Sweep2Wake</string>
     <string name="sweep2wake_pref_0">Disabled</string>
+    <string name="sweep2wake_summary">%s</string>
     <string name="sweep2wake_pref_1">Enabled</string>
     <string name="sweep2wake_pref_2">Enabled with backlight</string>
 

@@ -27,6 +27,7 @@ public class AndromadusSettings extends SettingsFragment
     public static final String S2W_FILE = "/sys/android_touch/sweep2wake";
     public static final String SWEEP_2_WAKE = "sweep2wake_setting";
 
+    private String ms2wFormat;
     private ContentResolver mCr;
     private PreferenceScreen mPrefSet;
 
@@ -42,6 +43,7 @@ public class AndromadusSettings extends SettingsFragment
 
         String temp;
         String[] ms2woptions = new String[0];
+        ms2wFormat = getString(R.string.sweep2wake_summary);
 
         addPreferencesFromResource(R.xml.andromadus_settings);
 
@@ -81,22 +83,40 @@ public class AndromadusSettings extends SettingsFragment
             // Sweep to wake
         if (!Utils.fileExists(S2W_FILE) == false) {
             ms2wPref.setEnabled(false);
+        } else {
+            ms2wPref.setEntryValues(sweep2wake_menu_values);
+            ms2wPref.setEntries(sweep2wake_menu_entries);
+            ms2wPref.setValue(temp);
+            ms2wPref.setSummary(String.format(ms2wFormat, temp));
+            ms2wPref.setOnPreferenceChangeListener(this);
         }
-
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         String key = preference.getKey();
-        
+        String fname = "";
+
+        if (newValue != null) {
+            if (preference == ms2wPref) {
+                fname = S2W_FILE;
+        }
+
+        if (Utils.fileWriteOneLine(fname, (String) newValue)) {
+                if (preference == ms2wPref) {
+                    ms2wPref.setSummary(ms2wFormat, newValue);
+                }
+                return true;
+            } else {
+                return false;
+            }
+            return false;
+        }
         if (TRACKBALL_WAKE_TOGGLE.equals(key)) {
             Settings.System.putInt(mCr, Settings.System.TRACKBALL_WAKE_SCREEN, (Boolean) newValue ? 1 : 0);
         } else if (TRACKBALL_UNLOCK_TOGGLE.equals(key)) {
             Settings.System.putInt(mCr, Settings.System.TRACKBALL_UNLOCK_SCREEN, (Boolean) newValue ? 1 : 0);
         } else if (STATUSBAR_SIXBAR_SIGNAL.equals(key)) {
             Settings.System.putInt(mCr, Settings.System.STATUSBAR_6BAR_SIGNAL, (Boolean) newValue ? 1 : 0);
-        } else if (SWEEP_2_WAKE.equals(key)) {
-            int value = Integer.valueOf((String) newValue);
-            Settings.System.putInt(mCr, Settings.System.SWEEP_2_WAKE, value);
         }
         return true;
     }
