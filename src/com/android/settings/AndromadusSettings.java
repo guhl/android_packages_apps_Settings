@@ -25,7 +25,6 @@ public class AndromadusSettings extends SettingsFragment
     private static final String TRACKBALL_UNLOCK_TOGGLE = "pref_trackball_unlock_toggle";
     private static final String STATUSBAR_SIXBAR_SIGNAL = "pref_statusbar_sixbar_signal";
     public static final String S2W_FILE = "/sys/android_touch/sweep2wake";
-    public static final String SWEEP_2_WAKE = "sweep2wake_setting";
 
     private String ms2wFormat;
     private ContentResolver mCr;
@@ -51,8 +50,7 @@ public class AndromadusSettings extends SettingsFragment
         mCr = getContentResolver();
 
         /* Sweep2wake pref */
-        ms2wPref = (ListPreference) mPrefSet.findPreference(SWEEP_2_WAKE);
-        ms2wPref.setOnPreferenceChangeListener(this);
+        ms2wPref = (ListPreference) mPrefSet.findPreference(S2W_FILE);
 
         /* Trackball wake pref */
         mTrackballWake = (CheckBoxPreference) mPrefSet.findPreference(
@@ -81,11 +79,11 @@ public class AndromadusSettings extends SettingsFragment
             mPrefSet.removePreference(mTrackballUnlockScreen);
         }
             // Sweep to wake
-        if (!Utils.fileExists(S2W_FILE) == false) {
+        if (!Utils.fileExists(S2W_FILE) || (temp = Utils.fileReadOneLine(S2W_FILE)) == null) {
             ms2wPref.setEnabled(false);
         } else {
-            ms2wPref.setEntryValues(sweep2wake_menu_values);
-            ms2wPref.setEntries(sweep2wake_menu_entries);
+            ms2wPref.setEntryValues(R.array.sweep2wake_menu_values);
+            ms2wPref.setEntries(R.array.sweep2wake_menu_entries);
             ms2wPref.setValue(temp);
             ms2wPref.setSummary(String.format(ms2wFormat, temp));
             ms2wPref.setOnPreferenceChangeListener(this);
@@ -103,13 +101,12 @@ public class AndromadusSettings extends SettingsFragment
 
         if (Utils.fileWriteOneLine(fname, (String) newValue)) {
                 if (preference == ms2wPref) {
-                    ms2wPref.setSummary(ms2wFormat, newValue);
+                    ms2wPref.setSummary(String.format(ms2wFormat, newValue));
                 }
                 return true;
             } else {
                 return false;
             }
-            return false;
         }
         if (TRACKBALL_WAKE_TOGGLE.equals(key)) {
             Settings.System.putInt(mCr, Settings.System.TRACKBALL_WAKE_SCREEN, (Boolean) newValue ? 1 : 0);
