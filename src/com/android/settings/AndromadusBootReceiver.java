@@ -29,7 +29,7 @@ import com.android.settings.Utils;
 import java.util.Arrays;
 import java.util.List;
 
-public class BootReceiver extends BroadcastReceiver {
+public class AndromadusBootReceiver extends BroadcastReceiver {
 
     private static final String TAG = "AndromadusBootReceiver";
 
@@ -40,44 +40,19 @@ public class BootReceiver extends BroadcastReceiver {
         if (SystemProperties.getBoolean(S2W_SETTINGS_PROP, false) == false
                 && intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
             SystemProperties.set(S2W_SETTINGS_PROP, "true");
-            configureCPU(ctx);
+            configureS2W(ctx);
         } else {
             SystemProperties.set(S2W_SETTINGS_PROP, "false");
         }
     }
 
-    private void configureIOSched(Context ctx) {
+
+    private void configureS2W(Context ctx) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
 
-        if (prefs.getBoolean(IOScheduler.SOB_PREF, false) == false) {
-            Log.i(TAG, "Restore disabled by user preference.");
-            return;
-        }
+        String s2w = prefs.getString(AndromadusSettings.S2W_PREF, false);
 
-        String ioscheduler = prefs.getString(IOScheduler.IOSCHED_PREF, null);
-        String availableIOSchedulersLine = Utils.fileReadOneLine(IOScheduler.IOSCHED_LIST_FILE);
-        boolean noSettings = ((availableIOSchedulersLine == null) || (ioscheduler == null));
-        List<String> ioschedulers = null;
-
-        if (noSettings) {
-            Log.d(TAG, "No I/O scheduler settings saved. Nothing to restore.");
-        } else {
-            if (availableIOSchedulersLine != null){
-                ioschedulers = Arrays.asList(availableIOSchedulersLine.replace("[", "").replace("]", "").split(" "));
-            }
-            if (ioscheduler != null && ioschedulers != null && ioschedulers.contains(ioscheduler)) {
-                Utils.fileWriteOneLine(IOScheduler.IOSCHED_LIST_FILE, ioscheduler);
-            }
-            Log.d(TAG, "I/O scheduler settings restored.");
-        }
-    }
-
-    private void configureKSM(Context ctx) {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
-
-        boolean ksm = prefs.getBoolean(MemoryManagement.KSM_PREF, false);
-
-        Utils.fileWriteOneLine(MemoryManagement.KSM_RUN_FILE, ksm ? "1" : "0");
-        Log.d(TAG, "KSM settings restored.");
+        Utils.fileWriteOneLine(AndromadusSettings.S2W_FILE, (String) s2w);
+        Log.d(TAG, "S2W settings restored.");
     }
 }
