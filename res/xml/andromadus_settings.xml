@@ -21,6 +21,14 @@
         android:title="@string/pref_trackball_wake_toggle_title"
         android:summary="@string/pref_trackball_wake_toggle_summary" />
 
+    <ListPreference
+        android:key="sweep2wake_setting"
+        android:defaultValue="0"
+        android:dialogTitle="@string/sweep2wake_title"
+        android:title="@string/sweep2wake_title"
+        android:entries="@array/sweep2wake_menu_entries"
+        android:entryValues="@array/sweep2wake_menu_values"/>
+
     <PreferenceCategory
         android:title="@string/andromadus_statusbar" />
 
