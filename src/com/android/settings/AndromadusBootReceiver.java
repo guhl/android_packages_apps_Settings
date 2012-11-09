@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.cyanogenmod;
+package com.android.settings;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -50,7 +50,7 @@ public class AndromadusBootReceiver extends BroadcastReceiver {
     private void configureS2W(Context ctx) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
 
-        String s2w = prefs.getString(AndromadusSettings.S2W_PREF, false);
+        String s2w = prefs.getString(AndromadusSettings.S2W_PREF, null);
 
         Utils.fileWriteOneLine(AndromadusSettings.S2W_FILE, (String) s2w);
         Log.d(TAG, "S2W settings restored.");
