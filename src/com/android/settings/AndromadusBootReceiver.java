@@ -52,7 +52,7 @@ public class AndromadusBootReceiver extends BroadcastReceiver {
 
         String s2w = prefs.getString(AndromadusSettings.S2W_PREF, null);
 
-        Utils.fileWriteOneLine(AndromadusSettings.S2W_FILE, (String) s2w);
+        Utils.fileWriteOneLine(AndromadusSettings.S2W_FILE, ((String) s2w)+"\n");
         Log.d(TAG, "S2W settings restored.");
     }
 }
