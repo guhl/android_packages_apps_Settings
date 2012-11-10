@@ -110,7 +110,7 @@ public class AndromadusSettings extends SettingsFragment
                 fname = S2W_FILE;
         }
 
-        if (Utils.fileWriteOneLine(fname, (String) newValue)) {
+        if (Utils.fileWriteOneLine(fname, (((String) newValue))+"\n")) {
                 if (preference == ms2wPref) {
                     ms2wPref.setSummary(String.format(ms2wFormat, newValue));
                 }
