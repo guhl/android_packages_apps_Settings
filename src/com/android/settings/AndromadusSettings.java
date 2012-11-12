@@ -30,6 +30,7 @@ public class AndromadusSettings extends SettingsFragment
     private String ms2wFormat;
     private ContentResolver mCr;
     private PreferenceScreen mPrefSet;
+    private String[] strs2wDesc = getResources().getStringArray(R.array.sweep2wake_menu_entries);
 
     private CheckBoxPreference mTrackballWake;
     private CheckBoxPreference mTrackballUnlockScreen;
@@ -82,10 +83,17 @@ public class AndromadusSettings extends SettingsFragment
         if (!Utils.fileExists(S2W_FILE) || (temp = Utils.fileReadOneLine(S2W_FILE)) == null) {
             mPrefSet.removePreference(ms2wPref);
         } else {
+            int s2wEnabledValue = 1;
+            try{
+                    s2wEnabledValue = Integer.parseInt(temp);
+            }catch(NumberFormatException nef){
+            nef.printStackTrace();
+        }
+
             ms2wPref.setEntryValues(R.array.sweep2wake_menu_values);
             ms2wPref.setEntries(R.array.sweep2wake_menu_entries);
             ms2wPref.setValue(temp);
-            ms2wPref.setSummary(String.format(ms2wFormat, temp));
+            ms2wPref.setSummary(String.format(ms2wFormat, strs2wDesc[s2wEnabledValue]));
             ms2wPref.setOnPreferenceChangeListener(this);
         }
     }
@@ -97,7 +105,15 @@ public class AndromadusSettings extends SettingsFragment
         super.onResume();
 
         if (Utils.fileExists(S2W_FILE) && (temp = Utils.fileReadOneLine(S2W_FILE)) != null) {
-            ms2wPref.setSummary(String.format(ms2wFormat, temp));
+
+                int s2wEnabledValue = 1;
+                try{
+                        s2wEnabledValue = Integer.parseInt(temp);
+                }catch(NumberFormatException nef){
+                        nef.printStackTrace();
+                }
+
+            ms2wPref.setSummary(String.format(ms2wFormat, strs2wDesc[s2wEnabledValue]));
         }
     }
 
@@ -105,20 +121,26 @@ public class AndromadusSettings extends SettingsFragment
         String key = preference.getKey();
         String fname = "";
 
-        if (newValue != null) {
-            if (preference == ms2wPref) {
+     if (preference == ms2wPref) {
                 fname = S2W_FILE;
-        }
 
         if (Utils.fileWriteOneLine(fname, (((String) newValue))+"\n")) {
                 if (preference == ms2wPref) {
-                    ms2wPref.setSummary(String.format(ms2wFormat, newValue));
+                        int s2wEnabledValue = 1;
+                        try{
+                                s2wEnabledValue = Integer.parseInt((String)newValue);
+                        }catch(NumberFormatException nef){
+                                nef.printStackTrace();
+                        }
+
+                    ms2wPref.setSummary(String.format(ms2wFormat, strs2wDesc[s2wEnabledValue]));
                 }
                 return true;
             } else {
                 return false;
             }
         }
+
         if (TRACKBALL_WAKE_TOGGLE.equals(key)) {
             Settings.System.putInt(mCr, Settings.System.TRACKBALL_WAKE_SCREEN, (Boolean) newValue ? 1 : 0);
         } else if (TRACKBALL_UNLOCK_TOGGLE.equals(key)) {
