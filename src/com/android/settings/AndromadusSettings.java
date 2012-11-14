@@ -1,5 +1,6 @@
 package com.android.settings;
 
+import android.content.res.Configuration;
 import android.content.ContentResolver;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +25,7 @@ public class AndromadusSettings extends SettingsFragment
     private static final String TRACKBALL_WAKE_TOGGLE = "pref_trackball_wake_toggle";
     private static final String TRACKBALL_UNLOCK_TOGGLE = "pref_trackball_unlock_toggle";
     private static final String STATUSBAR_SIXBAR_SIGNAL = "pref_statusbar_sixbar_signal";
+    private static final String QUICK_LAUNCH = "pref_quick_launch";
     public static final String S2W_PREF = "sweep2wake_setting";
     public static final String S2W_FILE = "/sys/android_touch/sweep2wake";
 
@@ -36,6 +38,7 @@ public class AndromadusSettings extends SettingsFragment
     private CheckBoxPreference mTrackballUnlockScreen;
     private CheckBoxPreference mUseSixbaricons;
 
+    private Preference mQuickLaunch;
     private ListPreference ms2wPref;
 
     @Override
@@ -49,9 +52,6 @@ public class AndromadusSettings extends SettingsFragment
 
         mPrefSet = getPreferenceScreen();
         mCr = getContentResolver();
-
-        /* Sweep2wake pref */
-        ms2wPref = (ListPreference) mPrefSet.findPreference(S2W_PREF);
 
         /* Trackball wake pref */
         mTrackballWake = (CheckBoxPreference) mPrefSet.findPreference(
@@ -79,7 +79,10 @@ public class AndromadusSettings extends SettingsFragment
             mPrefSet.removePreference(mTrackballWake);
             mPrefSet.removePreference(mTrackballUnlockScreen);
         }
-            // Sweep to wake
+
+        /* Sweep2wake pref */
+        ms2wPref = (ListPreference) mPrefSet.findPreference(S2W_PREF);
+
         if (!Utils.fileExists(S2W_FILE) || (temp = Utils.fileReadOneLine(S2W_FILE)) == null) {
             mPrefSet.removePreference(ms2wPref);
         } else {
@@ -96,6 +99,14 @@ public class AndromadusSettings extends SettingsFragment
             ms2wPref.setSummary(String.format(ms2wFormat, strs2wDesc[s2wEnabledValue]));
             ms2wPref.setOnPreferenceChangeListener(this);
         }
+
+        /* QuickLaunch pref */
+
+        mQuickLaunch = (Preference) mPrefSet.findPreference(QUICK_LAUNCH);
+        if (getResources().getConfiguration().keyboard != Configuration.KEYBOARD_QWERTY) {
+            mPrefSet.removePreference(mQuickLaunch);
+        }
+
     }
 
     @Override
