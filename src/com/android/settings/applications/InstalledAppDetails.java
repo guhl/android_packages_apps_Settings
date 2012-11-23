@@ -53,6 +53,7 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.RemoteException;
 import android.os.ServiceManager;
+import android.provider.Settings;
 import android.preference.PreferenceActivity;
 import android.text.SpannableString;
 import android.text.TextUtils;
@@ -66,7 +67,9 @@ import java.util.List;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AppSecurityEditablePermissions;
 import android.widget.AppSecurityPermissions;
+import android.widget.AppSecurityPermissionsBase;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -586,7 +589,12 @@ public class InstalledAppDetails extends Fragment
 
         // Security permissions section
         LinearLayout permsView = (LinearLayout) mRootView.findViewById(R.id.permissions_section);
-        AppSecurityPermissions asp = new AppSecurityPermissions(getActivity(), packageName);
+        AppSecurityPermissionsBase asp = null;
+        if (isPermissionsManagementEnabled() && (mAppEntry.info.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
+            asp = new AppSecurityEditablePermissions(getActivity(), packageName);
+        } else {
+            asp = new AppSecurityPermissions(getActivity(), packageName);
+        }
         if (asp.getPermissionCount() > 0) {
             permsView.setVisibility(View.VISIBLE);
             // Make the security sections header visible
@@ -643,6 +651,12 @@ public class InstalledAppDetails extends Fragment
         refreshButtons();
         refreshSizeInfo();
         return true;
+    }
+    
+    private boolean isPermissionsManagementEnabled() {
+        return Settings.Secure.getInt(getActivity().getContentResolver(),
+                Settings.Secure.ENABLE_PERMISSIONS_MANAGEMENT,
+                getResources().getBoolean(com.android.internal.R.bool.config_enablePermissionsManagement) ? 1 : 0) == 1;
     }
     
     private void resetLaunchDefaultsUi(TextView title, TextView autoLaunchView) {
