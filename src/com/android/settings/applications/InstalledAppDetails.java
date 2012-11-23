@@ -57,6 +57,7 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.UserHandle;
 import android.os.UserManager;
+import android.provider.Settings;
 import android.preference.PreferenceActivity;
 import android.text.SpannableString;
 import android.text.TextUtils;
@@ -74,8 +75,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.AppSecurityPermissions;
 import android.widget.ArrayAdapter;
+import android.widget.AppSecurityPermissions;
+import android.widget.AppSecurityPermissionsBase;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -720,7 +722,13 @@ public class InstalledAppDetails extends Fragment
 
         // Security permissions section
         LinearLayout permsView = (LinearLayout) mRootView.findViewById(R.id.permissions_section);
-        AppSecurityPermissions asp = new AppSecurityPermissions(getActivity(), packageName);
+        AppSecurityPermissionsBase asp = null;
+        if (isPermissionsManagementEnabled() && (mAppEntry.info.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
+            asp = new AppSecurityPermissions(getActivity(), packageName);
+//            asp = new AppSecurityEditablePermissions(getActivity(), packageName);
+        } else {
+            asp = new AppSecurityPermissions(getActivity(), packageName);
+        }
         int premiumSmsPermission = getPremiumSmsPermission(packageName);
         // Premium SMS permission implies the app also has SEND_SMS permission, so the original
         // application permissions list doesn't have to be shown/hidden separately. The premium
@@ -869,6 +877,12 @@ public class InstalledAppDetails extends Fragment
                 // ignored
             }
         }
+    }
+    
+    private boolean isPermissionsManagementEnabled() {
+        return Settings.Secure.getInt(getActivity().getContentResolver(),
+                Settings.Secure.ENABLE_PERMISSIONS_MANAGEMENT,
+                getResources().getBoolean(com.android.internal.R.bool.config_enablePermissionsManagement) ? 1 : 0) == 1;
     }
     
     private void resetLaunchDefaultsUi(TextView title, TextView autoLaunchView) {
