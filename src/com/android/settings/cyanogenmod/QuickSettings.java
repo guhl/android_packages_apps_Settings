@@ -250,6 +250,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
                     Settings.System.EXPANDED_SCREENTIMEOUT_MODE, value);
             mScreenTimeoutMode.setSummary(mScreenTimeoutMode.getEntries()[index]);
             return true;
+        } else if (preference == mScreenTimeoutMode) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mScreenTimeoutMode.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.EXPANDED_SCREENTIMEOUT_MODE, value);
+            mScreenTimeoutMode.setSummary(mScreenTimeoutMode.getEntries()[index]);
+            return true;
         }
         return false;
     }
