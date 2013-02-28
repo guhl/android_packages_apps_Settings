@@ -800,22 +800,6 @@
         <item>Always allow</item>
     </string-array>
 
-    <!-- **** ANDROMADUS EDITS START **** -->
-
-    <string-array name="sweep2wake_menu_entries">
-        <item>@string/sweep2wake_pref_0</item>
-        <item>@string/sweep2wake_pref_1</item>
-        <item>@string/sweep2wake_pref_2</item>
-    </string-array>
-
-    <string-array name="sweep2wake_menu_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
-    <!-- **** ANDROMADUS EDITS END **** -->
-
     <!-- **** CYANOGENMOD ADDITIONS START **** -->
 
     <!-- Volume Overlay options. -->
