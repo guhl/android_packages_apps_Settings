@@ -9,8 +9,8 @@
 
     <Preference
         android:key="pref_quick_launch"
-        android:title="Quick Launch"
-        android:summary="Edit the shortcut keys on your keyboard">
+        android:title="@string/quick_launch_title"
+        android:summary="@string/quick_launch_summary">
             <intent android:action="android.settings.QUICK_LAUNCH_SETTINGS" />
     </Preference>
 
