@@ -1843,6 +1843,24 @@
     <string name="cell_broadcast_settings" msgid="8415582011920085222">"Сообщения сети"</string>
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"Выберите типы экстренных оповещений на экране."</string>
 
+    <!-- ANDROMADUS EDITS START -->
+
+    <string name="andromadus_general">Основные</string>
+    <string name="pref_trackball_wake_toggle_title">Включение трекпадом</string>
+    <string name="pref_trackball_wake_toggle_summary">Нажатие на трекпад включает устройство</string>
+    <string name="pref_trackball_unlock_toggle_title">Разблокировка трекпадом</string>
+    <string name="pref_trackball_unlock_toggle_summary">Повторное нажатие трекпада разблокирует устройство</string>
+    <!-- Setting for Camera button play/pause controls -->
+    <string name="cambtn_music_controls_title">Управление музыкой кнопкой камеры</string>
+    <string name="cambtn_music_controls_summary">При выключенном экране нажатие кнопки камеры ставит трек на паузу или продолжает его воспроизведение</string>
+    <!-- Sweep 2 Wake Settings -->
+    <string name="sweep2wake_title">Sweep2Wake</string>
+    <string name="sweep2wake_pref_0">Отключено</string>
+    <string name="sweep2wake_pref_1">Включено</string>
+    <string name="sweep2wake_pref_2">Включено, с подсветкой кнопок</string>
+
+    <!-- **** ANDROMADUS ADDITIONS END **** -->
+
     <!-- CYANOGENMOD EDITS START -->
 
     <!-- Quiet hours -->

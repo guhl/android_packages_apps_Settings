@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="@string/andromadus_settings"
+        android:key="pref_category_button_settings"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceCategory
+        android:title="@string/andromadus_general" />
+
+    <Preference
+        android:key="pref_quick_launch"
+        android:title="@string/quick_launch_title"
+        android:summary="@string/quick_launch_summary">
+            <intent android:action="android.settings.QUICK_LAUNCH_SETTINGS" />
+    </Preference>
+
+    <CheckBoxPreference android:key="pref_trackball_unlock_toggle"
+        android:title="@string/pref_trackball_unlock_toggle_title"
+        android:summary="@string/pref_trackball_unlock_toggle_summary" />
+
+    <CheckBoxPreference android:key="pref_trackball_wake_toggle"
+        android:title="@string/pref_trackball_wake_toggle_title"
+        android:summary="@string/pref_trackball_wake_toggle_summary" />
+
+    <ListPreference
+        android:key="sweep2wake_setting"
+        android:defaultValue="0"
+        android:dialogTitle="@string/sweep2wake_title"
+        android:title="@string/sweep2wake_title"
+        android:entries="@array/sweep2wake_menu_entries"
+        android:entryValues="@array/sweep2wake_menu_values"/>
+
+</PreferenceScreen>
