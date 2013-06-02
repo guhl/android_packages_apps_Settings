@@ -13,8 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
  -->
-<resources xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="font_size_preview_text">Pa\'s wijze lynx bezag vroom het fikse aquaduct.</string>
     <string name="default_date_format"><xliff:g id="default_date_format">dd/MM/yyyy</xliff:g></string>
     <string name="intent_sender_data_label"><xliff:g id="data">Gegevens:</xliff:g></string>
@@ -248,7 +247,7 @@
     <string name="icon_picker_gallery">Galerij</string>
     <string name="icon_picker_google_small">Google (klein)</string>
     <string name="icon_picker_googleplus">Google+</string>
-    <string name="icon_picker_googletalk">Talk</string>
+    <string name="icon_picker_googletalk">Hangouts</string>
     <string name="icon_picker_maps">Maps</string>
     <string name="icon_picker_movie">Play Movies &amp; TV</string>
     <string name="icon_picker_music">Play Music</string>
@@ -345,7 +344,7 @@ Let op:\nAangezien het beginvolume hoger is ingesteld dan het beltoonvolume, wor
     <string name="hardware_keys_app_switch_press_title">Recente appsknop</string>
     <string name="hardware_keys_app_switch_long_press_title">Recente appsknop (lang ingedrukt)</string>
     <string name="hardware_keys_show_overflow_title">Actieknop</string>
-    <string name="hardware_keys_show_overflow_summary">3-puntsmenuknop tonen in app</string>
+    <string name="hardware_keys_show_overflow_summary">3-puntsmenuknop tonen in apps</string>
     <string name="hardware_keys_show_overflow_toast_enable">Herstart van apps mogelijk vereist om wijziging toe te passen</string>
     <string name="hardware_keys_show_overflow_toast_disable">Herstart van apps mogelijk vereist om wijziging toe te passen</string>
     <string name="hardware_keys_action_nothing">Geen actie</string>
@@ -601,6 +600,11 @@ Let op:\nAangezien het beginvolume hoger is ingesteld dan het beltoonvolume, wor
     <string name="pie_control_title">Zwevende knoppen</string>
     <string name="pie_control_enabled">\'Pie controls\' ingeschakeld als \'Uitgebreid bureaublad\' ingeschakeld is</string>
     <string name="pie_control_disabled">\'Pie controls\' uitgeschakeld</string>
+    <string name="pie_control_sensitivity_title">Reactiesnelheid</string>
+    <string name="pie_control_sensitivity_low">Laag</string>
+    <string name="pie_control_sensitivity_medium">Gemiddeld</string>
+    <string name="pie_control_sensitivity_high">Hoog</string>
+    <string name="pie_control_sensitivity_very_high">Zeer hoog</string>
     <string name="pie_control_size">Grootte navigatieknoppen</string>
     <string name="pie_control_trigger_positions">Oproepplaatsen</string>
     <string name="pie_control_trigger_left">Linkerrand scherm</string>
@@ -667,6 +671,12 @@ De helderheidscurve wordt berekend door <i>kubische spline-interpolatie</i> toe 
 \n\n
 Elke regel in de lijst van helderheidsstanden komt overeen met één <i>controlepunt</i> op de helderheidscurve. Tijdens het verplaatsen van de schuifbalk wordt de schermhelderheid automatisch aangepast om een voorbeeld te geven van het lichtniveau.\nExtra opties zijn beschikbaar door een regel lang aan te raken. Door \'Aanpassen\' te kiezen kan zowel de omgevingslichtsterkte als de gewenste schermhelderheid aangepast worden. Met \'Opsplitsen\' kan een regel gedupliceerd worden om een extra controlepunt in te voegen en \'Verwijderen\' verwijdert de geselecteerde regel.
     </string>
+    <string name="auto_brightness_sensitivity_title">Aanpassingsgevoeligheid</string>
+    <string name="auto_brightness_sensitivity_verylow">Zeer laag</string>
+    <string name="auto_brightness_sensitivity_low">Laag</string>
+    <string name="auto_brightness_sensitivity_medium">Gemiddeld</string>
+    <string name="auto_brightness_sensitivity_high">Hoog</string>
+    <string name="auto_brightness_sensitivity_veryhigh">Zeer hoog</string>
     <string name="wifi_ibss_freq_title">Kanaal/frequentie</string>
     <string name="wifi_channel">Kanaal</string>
     <string name="wifi_mhz">MHz</string>

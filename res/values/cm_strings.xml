@@ -295,6 +295,7 @@
     <string name="toggleFlashlight">Flashlight</string>
     <string name="toggleLockScreen">Lock Screen</string>
     <string name="toggleWimax">WiMAX</string>
+    <string name="toggleNfc">NFC</string>
 
     <!-- Screen security - Screen security   -->
     <string name="screen_security_category">Screen security</string>
@@ -394,7 +395,7 @@
 
     <!-- Lock screen shortcuts -->
     <string name="picker_activities">Activities</string>
-    <string name="select_custom_app_title">Select custom application</string>
+    <string name="select_custom_app_title">Select custom app</string>
     <string name="select_custom_activity_title">Select custom activity</string>
     <string name="icon_picker_choose_icon_title">Choose icon</string>
     <string name="icon_picker_alarm">Alarm</string>
@@ -409,7 +410,7 @@
     <string name="icon_picker_gallery">Gallery</string>
     <string name="icon_picker_google_small">Google (small)</string>
     <string name="icon_picker_googleplus">Google Plus</string>
-    <string name="icon_picker_googletalk">Google Talk</string>
+    <string name="icon_picker_googletalk">Hangouts</string>
     <string name="icon_picker_maps">Maps</string>
     <string name="icon_picker_movie">Movie</string>
     <string name="icon_picker_music">Music</string>
@@ -843,6 +844,13 @@ desired screen brightness. Selecting \'Split\' allows you to to duplicate one li
 two in order to insert additional control points. \'Remove\' deletes the selected line.
     </string>
 
+    <string name="auto_brightness_sensitivity_title">Adjustment sensitivity</string>
+    <string name="auto_brightness_sensitivity_verylow">Very low</string>
+    <string name="auto_brightness_sensitivity_low">Low</string>
+    <string name="auto_brightness_sensitivity_medium">Medium</string>
+    <string name="auto_brightness_sensitivity_high">High</string>
+    <string name="auto_brightness_sensitivity_veryhigh">Very high</string>
+
     <!-- Advanced reboot options -->
     <string name="advanced_reboot_title">Advanced reboot</string>
     <string name="advanced_reboot_summary">When unlocked, include options in the power menu for rebooting into recovery or bootloader</string>
@@ -871,6 +879,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_control_title">Pie controls</string>
     <string name="pie_control_enabled">Floating controls when Expanded desktop is enabled</string>
     <string name="pie_control_disabled">Floating controls disabled</string>
+    <string name="pie_control_sensitivity_title">Responsiveness</string>
+    <string name="pie_control_sensitivity_low">Low</string>
+    <string name="pie_control_sensitivity_medium">Medium</string>
+    <string name="pie_control_sensitivity_high">High</string>
+    <string name="pie_control_sensitivity_very_high">Very high</string>
     <string name="pie_control_size">Navigation key size</string>
     <string name="pie_control_trigger_positions">Trigger positions</string>
     <string name="pie_control_trigger_left">Left screen border</string>
