@@ -41,6 +41,7 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -63,7 +64,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
 
     private static final int MENU_DELETE = Menu.FIRST + 1;
 
-    private static final int MENU_WIFI = Menu.FIRST + 2;
+    private static final int MENU_TRIGGERS = Menu.FIRST + 2;
 
     private Profile mProfile;
 
@@ -103,6 +104,10 @@ public class ProfileConfig extends SettingsPreferenceFragment
         if (deviceSupportsMobileData(getActivity())) {
             mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_MOBILEDATA, getString(R.string.toggleData)));
             mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIFIAP, getString(R.string.toggleWifiAp)));
+            final TelephonyManager tm = (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
+            if (tm.getPhoneType() == TelephonyManager.PHONE_TYPE_GSM) {
+                mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_2G3G, getString(R.string.toggle2g3g), R.array.profile_networkmode_entries));
+            }
         }
         if (WimaxHelper.isWimaxSupported(getActivity())) {
             mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIMAX, getString(R.string.toggleWimax)));
@@ -135,9 +140,9 @@ public class ProfileConfig extends SettingsPreferenceFragment
             nfc.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
                     MenuItem.SHOW_AS_ACTION_WITH_TEXT);
         }
-        MenuItem wifi = menu.add(0, MENU_WIFI, 0, R.string.profile_trigger_wifi)
+        MenuItem triggers = menu.add(0, MENU_TRIGGERS, 0, R.string.profile_triggers)
                 .setIcon(R.drawable.ic_location);
-        wifi.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
+        triggers.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
                 MenuItem.SHOW_AS_ACTION_WITH_TEXT);
         MenuItem delete = menu.add(0, MENU_DELETE, 1, R.string.profile_menu_delete)
                 .setIcon(R.drawable.ic_menu_trash_holo_dark);
@@ -154,8 +159,8 @@ public class ProfileConfig extends SettingsPreferenceFragment
             case MENU_NFC_WRITE:
                 startNFCProfileWriter();
                 return true;
-            case MENU_WIFI:
-                startWifiTrigger();
+            case MENU_TRIGGERS:
+                startTriggerFragment();
                 return true;
             default:
                 return false;
@@ -186,14 +191,12 @@ public class ProfileConfig extends SettingsPreferenceFragment
         pa.startActivity(i);
     }
 
-    private void startWifiTrigger() {
+    private void startTriggerFragment() {
         final PreferenceActivity pa = (PreferenceActivity) getActivity();
-        final String title = getResources().getString(R.string.profile_trigger_title_wifi,
-                mProfile.getName());
         final Bundle args = new Bundle();
         args.putParcelable("profile", mProfile);
 
-        pa.startPreferencePanel(WifiTriggerFragment.class.getName(), args, 0, title, null, 0);
+        pa.startPreferencePanel(TriggersFragment.class.getName(), args, 0, "", null, 0);
     }
 
     private void fillList() {
@@ -301,6 +304,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
         if (connectionList != null) {
             connectionList.removeAll();
             for (ConnectionItem connection : mConnections) {
+                String[] connectionstrings = getResources().getStringArray(connection.mChoices);
                 ConnectionSettings settings = mProfile.getSettingsForConnection(connection.mConnectionId);
                 if (settings == null) {
                     settings = new ConnectionSettings(connection.mConnectionId);
@@ -310,8 +314,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
                 ProfileConnectionPreference pref = new ProfileConnectionPreference(getActivity());
                 pref.setKey("connection_" + connection.mConnectionId);
                 pref.setTitle(connection.mLabel);
-                pref.setSummary(settings.getValue() == 1 ? getString(R.string.connection_state_enabled) 
-                        : getString(R.string.connection_state_disabled));
+                pref.setSummary(connectionstrings[settings.getValue()]);
                 pref.setPersistent(false);
                 pref.setConnectionItem(connection);
                 connection.mCheckbox = pref;
@@ -441,10 +444,18 @@ public class ProfileConfig extends SettingsPreferenceFragment
         String mLabel;
         ConnectionSettings mSettings;
         ProfileConnectionPreference mCheckbox;
+        int mChoices;
 
         public ConnectionItem(int connectionId, String label) {
             mConnectionId = connectionId;
+            mChoices = R.array.profile_connection_entries;
             mLabel = label;
+        }
+
+        public ConnectionItem(int connectionId, String label, int choices) {
+            mConnectionId = connectionId;
+            mLabel = label;
+            mChoices = choices;
         }
     }
 
